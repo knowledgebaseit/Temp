@@ -62,6 +62,13 @@
                     },
                     {
                         "type": "PowerShell",
+                        "name": "AzCopy.ps1",
+                        "runElevated": true,
+                        "runAsSystem": true,
+                        "scriptUri": "https://raw.githubusercontent.com/knowledgebaseit/Temp/main/AzCopy.ps1"
+                    }, 
+                    {
+                        "type": "PowerShell",
                         "name": "InstallApps.ps1",
                         "runElevated": true,
                         "runAsSystem": true,
