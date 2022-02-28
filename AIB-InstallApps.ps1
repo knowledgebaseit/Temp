@@ -1,4 +1,4 @@
-﻿<#
+<#
 
 #>
 
@@ -64,15 +64,12 @@ catch {
     Write-Output "Error creating Log folder $ErrorMessage"
 }
 #endregion create folders
-#region AZCopy
-$zip = "$TempPath\AzCopy.Zip"
-Start-BitsTransfer -Source "https://aka.ms/downloadazcopy-v10-windows" -Destination $zip
-Expand-Archive $zip $TempPath -Force
-$azcopy = (get-childitem -Path $TempPath -Include "azcopy.exe" -Recurse)
 
 # download application files from storage account
+$azcopy = (get-childitem -Path $TempPath -Include "azcopy.exe" -Recurse)
 start-process -FilePath $azcopy.FullName -ArgumentList "cp $storageaccount $temppath --recursive=true"
 #endregion
+
 #region prerequisites
 Write-Host "Installing NuGet package provider and setting PSGallery to Trusted"
 If (Get-PSRepository | Where-Object { $_.Name -eq "PSGallery" -and $_.InstallationPolicy -ne "Trusted" }) {
