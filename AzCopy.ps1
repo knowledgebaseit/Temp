@@ -1,4 +1,5 @@
 $TempPath =  "c:\Temp\Software"
+$LogPath = "C:\Programdata\PPC\"
 
 try {
     If (!(Test-path -Path $TempPath -ErrorAction Ignore)) {New-Item -ItemType Directory $TempPath }
