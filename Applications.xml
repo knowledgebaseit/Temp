@@ -1,0 +1,21 @@
+<Applications>
+	<NotePadPlusPlus>
+		<Vendor>NotepadPlusPlus Team</Vendor>
+		<Product>NotepadPlusPlus</Product>
+		<Architecture>x64</Architecture>
+		<Evergreen>Get-EvergreenApp -Name NotepadPlusPlus | Where-Object { $_.Architecture -eq "$Architecture" -and $_.URI -like "*.exe" }</Evergreen>
+		<DisplayName>Notepad++</DisplayName>
+		<Description>Notepad++ is a text and source code editor for use with Microsoft Windows. It supports tabbed editing, which allows working with multiple open files in a single window. The project's name comes from the C increment operator. Notepad++ is distributed as free software.</Description>
+		<Installer>exe</Installer>
+		<Install>/S</Install>
+		<Uninstall>uninstall.exe</Uninstall>
+		<Path>C:\Program Files\NotepadPlusPlus</Path>
+		<Enabled>False</Enabled>
+		<Categories>IT Admin Tools</Categories>
+		<Assignments Customer="Pro Lab">
+			<Group>All Users</Group>
+			<RequiredGroup>All Devices</RequiredGroup>
+			<PilotGroup>Intune IT Pilot</PilotGroup>
+		</Assignments>
+	</NotePadPlusPlus>
+</Applications>
