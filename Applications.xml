@@ -10,7 +10,7 @@
 		<Install>/S</Install>
 		<Uninstall>uninstall.exe</Uninstall>
 		<Path>C:\Program Files\NotepadPlusPlus</Path>
-		<Enabled>False</Enabled>
+		<Enabled>True</Enabled>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="Pro Lab">
 			<Group>All Users</Group>
