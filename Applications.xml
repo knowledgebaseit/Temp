@@ -13,9 +13,8 @@
 		<Enabled>True</Enabled>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="Pro Lab">
-			<Group>All Users</Group>
-			<RequiredGroup>All Devices</RequiredGroup>
-			<PilotGroup>Intune IT Pilot</PilotGroup>
+			<Group></Group>
+			<RequiredGroup>MEM_WIN_APP_NotepadPlusPlus</RequiredGroup>
 		</Assignments>
 	</NotePadPlusPlus>
 </Applications>
