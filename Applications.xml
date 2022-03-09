@@ -3,7 +3,7 @@
 		<Vendor>NotepadPlusPlus Team</Vendor>
 		<Product>NotepadPlusPlus</Product>
 		<Architecture>x64</Architecture>
-		<Evergreen>Get-EvergreenApp -Name NotepadPlusPlus | Where-Object { $_.Architecture -eq "$Architecture" -and $_.URI -like "*.exe" }</Evergreen>
+		<Evergreen>Get-EvergreenApp -Name NotepadPlusPlus | Where-Object { $_.Architecture -eq "x64" -and $_.URI -like "*.exe" }</Evergreen>
 		<DisplayName>Notepad++</DisplayName>
 		<Description>Notepad++ is a text and source code editor for use with Microsoft Windows. It supports tabbed editing, which allows working with multiple open files in a single window. The project's name comes from the C increment operator. Notepad++ is distributed as free software.</Description>
 		<Installer>exe</Installer>
@@ -22,7 +22,7 @@
 		<Vendor>Martin Prikyl</Vendor>
 		<Product>WinSCP</Product>
 		<Architecture>x86</Architecture>
-		<Evergreen>Get-EvergreenApp -Name WinSCP | Where-Object { $_.Architecture -eq "$Architecture" -and $_.URI -like "*.exe" }</Evergreen>
+		<Evergreen>Get-EvergreenApp -Name WinSCP | Where-Object { $_.Architecture -eq "x86" -and $_.URI -like "*.exe" }</Evergreen>
 		<DisplayName>WinSCP</DisplayName>
 		<Description>WinSCP is a free and open-source SFTP, FTP, WebDAV, Amazon S3 and SCP client for Microsoft Windows. Its main function is secure file transfer between a local and a remote computer. Beyond this, WinSCP offers basic file manager and file synchronization functionality.</Description>
 		<Installer>exe</Installer>
@@ -62,7 +62,7 @@
 		<Vendor>7Zip</Vendor>
 		<Product>7Zip</Product>
 		<Architecture>x64</Architecture>
-		<Evergreen>Get-EvergreenApp -Name 7zip | Where-Object { $_.Architecture -eq "$Architecture" -and $_.URI -like "*.msi" }</Evergreen>
+		<Evergreen>Get-EvergreenApp -Name 7zip | Where-Object { $_.Architecture -eq "x64" -and $_.URI -like "*.msi" }</Evergreen>
 		<DisplayName>7-Zip</DisplayName>
 		<Description>7-Zip is a free and open-source file archiver, a utility used to place groups of files within compressed containers known as "archives". It is developed by Igor Pavlov and was first released in 1999. 7-Zip uses its own 7z archive format, but can read and write several other archive formats.</Description>
 		<Installer>msi</Installer>
@@ -82,7 +82,7 @@
 		<Vendor>GreenShot</Vendor>
 		<Product>GreenShot</Product>
 		<Architecture>x86</Architecture>
-		<Evergreen>Get-EvergreenApp -Name GreenShot | Where-Object { $_.Architecture -eq "$Architecture" -and $_.URI -like "*RELEASE.exe" }</Evergreen>
+		<Evergreen>Get-EvergreenApp -Name GreenShot | Where-Object { $_.Architecture -eq "x86" -and $_.URI -like "*RELEASE.exe" }</Evergreen>
 		<DisplayName>GreenShot</DisplayName>
 		<Description>Greenshot is a free and open-source screenshot program for Microsoft Windows. It is developed by Thomas Braun, Jens Klingen and Robin Krom and is published under GNU General Public License, hosted by GitHub. Greenshot is also available for macOS, but as proprietary software through the App Store.</Description>
 		<Installer>exe</Installer>
@@ -179,7 +179,7 @@
 		<Vendor>Google</Vendor>
 		<Product>Chrome</Product>
 		<Architecture>x64</Architecture>
-		<Evergreen>Get-EvergreenApp -Name GoogleChrome | Where-Object { $_.Architecture -eq "$Architecture" }</Evergreen>
+		<Evergreen>Get-EvergreenApp -Name GoogleChrome | Where-Object { $_.Architecture -eq "x64" -and $_.Channel -eq "stable" }</Evergreen>
 		<DisplayName>Google Chrome</DisplayName>
 		<Description>Google Chrome is a cross-platform web browser developed by Google. It was first released in 2008 for Microsoft Windows, and was later ported to Linux, macOS, iOS, and Android where it is the default browser built into the OS.</Description>
 		<Installer>msi</Installer>
@@ -218,7 +218,7 @@
 		<Vendor>Microsoft</Vendor>
 		<Product>WvDRemoteDesktop</Product>
 		<Architecture>x64</Architecture>
-		<Evergreen>Get-EvergreenApp -Name MicrosoftWvdRemoteDesktop | Where-Object { $_.Architecture -eq "$Architecture" }</Evergreen>
+		<Evergreen>Get-EvergreenApp -Name MicrosoftWvdRemoteDesktop | Where-Object { $_.Architecture -eq "x64" -and $_.Channel -eq "Public" }</Evergreen>
 		<DisplayName>Microsoft WvD Remote Desktop</DisplayName>
 		<Description>You can use the Remote Desktop client for Windows Desktop to access Windows apps and desktops remotely from a different Windows device.</Description>
 		<Installer>msi</Installer>
