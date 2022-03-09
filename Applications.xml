@@ -3,7 +3,7 @@
 		<Vendor>NotepadPlusPlus Team</Vendor>
 		<Product>NotepadPlusPlus</Product>
 		<Architecture>x64</Architecture>
-		<Evergreen>Get-EvergreenApp -Name NotepadPlusPlus | Where-Object { $_.Architecture -eq "x64" -and $_.URI -like "*.exe" }</Evergreen>
+		<Evergreen>Get-EvergreenApp -Name NotepadPlusPlus | Where-Object { $_.Architecture -eq "$Architecture" -and $_.URI -like "*.exe" }</Evergreen>
 		<DisplayName>Notepad++</DisplayName>
 		<Description>Notepad++ is a text and source code editor for use with Microsoft Windows. It supports tabbed editing, which allows working with multiple open files in a single window. The project's name comes from the C increment operator. Notepad++ is distributed as free software.</Description>
 		<Installer>exe</Installer>
@@ -12,9 +12,225 @@
 		<Path>C:\Program Files\NotepadPlusPlus</Path>
 		<Enabled>True</Enabled>
 		<Categories>IT Admin Tools</Categories>
-		<Assignments Customer="Pro Lab">
-			<Group></Group>
-			<RequiredGroup>MEM_WIN_APP_NotepadPlusPlus</RequiredGroup>
+		<Assignments Customer="">
+			<Group>All Users</Group>
+			<RequiredGroup></RequiredGroup>
+			<PilotGroup></PilotGroup>
 		</Assignments>
 	</NotePadPlusPlus>
+    <WinSCP>
+		<Vendor>Martin Prikyl</Vendor>
+		<Product>WinSCP</Product>
+		<Architecture>x86</Architecture>
+		<Evergreen>Get-EvergreenApp -Name WinSCP | Where-Object { $_.Architecture -eq "$Architecture" -and $_.URI -like "*.exe" }</Evergreen>
+		<DisplayName>WinSCP</DisplayName>
+		<Description>WinSCP is a free and open-source SFTP, FTP, WebDAV, Amazon S3 and SCP client for Microsoft Windows. Its main function is secure file transfer between a local and a remote computer. Beyond this, WinSCP offers basic file manager and file synchronization functionality.</Description>
+		<Installer>exe</Installer>
+		<Install>/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-</Install>
+		<Uninstall>unins000.exe</Uninstall>
+		<Path>C:\Program Files (x86)\WinSCP</Path>
+		<DetectionFile>WinSCP.exe</DetectionFile>
+		<Enabled>True</Enabled>
+		<Categories>IT Admin Tools</Categories>
+		<Assignments Customer="">
+			<Group>All Users</Group>
+			<RequiredGroup></RequiredGroup>
+			<PilotGroup></PilotGroup>
+		</Assignments>
+	</WinSCP>
+	<FileZilla>
+		<Vendor>Tim Kosse</Vendor>
+		<Product>FileZilla</Product>
+		<Architecture>x86</Architecture>
+		<Evergreen>Get-EvergreenApp -Name FileZilla</Evergreen>
+		<DisplayName>FileZilla FTP Client</DisplayName>
+		<Description>FileZilla is a free software, cross-platform FTP application, consisting of FileZilla Client and FileZilla Server. Client binaries are available for Windows, Linux, and macOS, server binaries are available for Windows only.</Description>
+		<Installer>exe</Installer>
+		<Install>/S</Install>
+		<Uninstall>uninstall.exe</Uninstall>
+		<Path>C:\Program Files\FileZilla FTP Client</Path>
+		<DetectionFile>FileZilla.exe</DetectionFile>
+		<Enabled>True</Enabled>
+		<Categories>IT Admin Tools</Categories>
+		<Assignments Customer="">
+			<Group>All Users</Group>
+			<RequiredGroup></RequiredGroup>
+			<PilotGroup></PilotGroup>
+		</Assignments>
+	</FileZilla>
+    <SevenZip>
+		<Vendor>7Zip</Vendor>
+		<Product>7Zip</Product>
+		<Architecture>x64</Architecture>
+		<Evergreen>Get-EvergreenApp -Name 7zip | Where-Object { $_.Architecture -eq "$Architecture" -and $_.URI -like "*.msi" }</Evergreen>
+		<DisplayName>7-Zip</DisplayName>
+		<Description>7-Zip is a free and open-source file archiver, a utility used to place groups of files within compressed containers known as "archives". It is developed by Igor Pavlov and was first released in 1999. 7-Zip uses its own 7z archive format, but can read and write several other archive formats.</Description>
+		<Installer>msi</Installer>
+		<Install>/i ALLUSERS=1 /qn</Install>
+		<Uninstall>/x</Uninstall>
+		<Path>C:\Program Files\7-Zip</Path>
+		<DetectionFile>7zG.exe</DetectionFile>
+		<Enabled>True</Enabled>
+		<Categories>IT Admin Tools</Categories>
+		<Assignments Customer="">
+			<Group>All Users</Group>
+			<RequiredGroup></RequiredGroup>
+			<PilotGroup></PilotGroup>
+		</Assignments>
+	</SevenZip>
+    <GreenShot>
+		<Vendor>GreenShot</Vendor>
+		<Product>GreenShot</Product>
+		<Architecture>x86</Architecture>
+		<Evergreen>Get-EvergreenApp -Name GreenShot | Where-Object { $_.Architecture -eq "$Architecture" -and $_.URI -like "*RELEASE.exe" }</Evergreen>
+		<DisplayName>GreenShot</DisplayName>
+		<Description>Greenshot is a free and open-source screenshot program for Microsoft Windows. It is developed by Thomas Braun, Jens Klingen and Robin Krom and is published under GNU General Public License, hosted by GitHub. Greenshot is also available for macOS, but as proprietary software through the App Store.</Description>
+		<Installer>exe</Installer>
+		<Install>/VERYSILENT /SUPPRESSMESSAGEBOXES /CLOSEAPPLICATIONS /RESTARTAPPLICATIONS /NORESTART</Install>
+		<Uninstall>unins000.exe</Uninstall>
+		<Path>C:\Program Files\Greenshot</Path>
+		<Enabled>True</Enabled>
+		<Categories>IT Admin Tools</Categories>
+		<Assignments Customer="">
+			<Group>All Users</Group>
+			<RequiredGroup></RequiredGroup>
+			<PilotGroup></PilotGroup>
+		</Assignments>
+	</GreenShot>
+    <TreeSizeFree>
+		<Vendor>JAM Software</Vendor>
+		<Product>TreeSizeFree</Product>
+		<Architecture>x86</Architecture>
+		<Evergreen>Get-EvergreenApp -Name JamTreeSizeFree</Evergreen>
+		<DisplayName>TreeSize Free</DisplayName>
+		<Description>TreeSize is a disk space analyzer written by JAM Software. TreeSize has native 32 and 64-bit support for all Windows versions and client/server versions currently supported by Microsoft.</Description>
+		<Installer>exe</Installer>
+		<Install>/verysilent</Install>
+		<Uninstall>unins000.exe</Uninstall>
+		<Path>C:\Program Files (x86)\JAM Software\TreeSize Free</Path>
+		<DetectionFile>TreeSizeFree.exe</DetectionFile>
+		<Enabled>True</Enabled>
+		<Categories>IT Admin Tools</Categories>
+		<Assignments Customer="">
+			<Group>All Users</Group>
+			<RequiredGroup></RequiredGroup>
+			<PilotGroup></PilotGroup>
+		</Assignments>
+	</TreeSizeFree>
+    <MozillaFirefox>
+		<Vendor>Mozilla</Vendor>
+		<Product>Firefox</Product>
+		<Architecture>x64</Architecture>
+		<Evergreen>Get-EvergreenApp -Name MozillaFirefox | Where-Object { $_.Architecture -eq "x64" -and $_.Channel -eq "LATEST_FIREFOX_VERSION" -and $_.Language -eq "en-US" -and $_.Type -eq "exe" } | Select-Object -First 1</Evergreen>
+		<DisplayName>Mozilla Firefox</DisplayName>
+		<Description>Mozilla Firefox, or simply Firefox, is a free and open-source web browser developed by the Mozilla Foundation and its subsidiary, the Mozilla Corporation. Firefox uses the Gecko layout engine to render web pages, which implements current and anticipated web standards.</Description>
+		<Installer>msi</Installer>
+		<Install>/i ALLUSERS=1 /qn</Install>
+		<Uninstall>/X</Uninstall>
+		<Path>C:\Program Files\Mozilla Firefox</Path>
+		<Enabled>True</Enabled>
+		<Categories>IT Admin Tools</Categories>
+		<Assignments Customer="">
+			<Group>All Users</Group>
+			<RequiredGroup></RequiredGroup>
+			<PilotGroup></PilotGroup>
+		</Assignments>
+	</MozillaFirefox>
+    <Gimp>
+		<Vendor>The Gimp Team</Vendor>
+		<Product>Gimp</Product>
+		<Architecture>x86</Architecture>
+		<Evergreen>Get-EvergreenApp -Name Gimp</Evergreen>
+		<DisplayName>Gimp</DisplayName>
+		<Description>GIMP is a free and open-source raster graphics editor used for image manipulation and image editing, free-form drawing, transcoding between different image file formats, and more specialized tasks. GIMP is released under GPLv3+ license and is available for Linux, macOS, and Microsoft Windows.</Description>
+		<Installer>exe</Installer>
+		<Install>/VERYSILENT /NORESTART /RESTARTEXITCODE=3010 /SUPPRESSMSGBOXES /SP-</Install>
+		<Uninstall>unins000.exe</Uninstall>
+		<Path>C:\Program Files\GIMP 2</Path>
+		<Enabled>True</Enabled>
+		<PMPC>False</PMPC>
+		<Categories>IT Admin Tools</Categories>
+		<Assignments Customer="">
+			<Group>All Users</Group>
+			<RequiredGroup></RequiredGroup>
+			<PilotGroup></PilotGroup>
+		</Assignments>
+	</Gimp>
+    <FoxitReader>
+		<Vendor>Foxit Software</Vendor>
+		<Product>FoxitReader</Product>
+		<Architecture>x64</Architecture>
+		<Evergreen>Get-EvergreenApp -Name FoxitReader | Where-Object { $_.Language -eq "English" }</Evergreen>
+		<DisplayName>Foxit Reader</DisplayName>
+		<Description>Foxit Reader is a multilingual freemium PDF tool that can create, view, edit, digitally sign, and print PDF files.</Description>
+		<Installer>exe</Installer>
+		<Install>/verysilent</Install>
+		<Uninstall></Uninstall>
+		<Path>C:\Program Files\Foxit Reader</Path>
+		<Enabled>True</Enabled>
+		<Categories>IT Admin Tools</Categories>
+		<Assignments Customer="">
+			<Group>All Users</Group>
+			<RequiredGroup></RequiredGroup>
+			<PilotGroup></PilotGroup>
+		</Assignments>
+	</FoxitReader>
+	<Chrome>
+		<Vendor>Google</Vendor>
+		<Product>Chrome</Product>
+		<Architecture>x64</Architecture>
+		<Evergreen>Get-EvergreenApp -Name GoogleChrome | Where-Object { $_.Architecture -eq "$Architecture" }</Evergreen>
+		<DisplayName>Google Chrome</DisplayName>
+		<Description>Google Chrome is a cross-platform web browser developed by Google. It was first released in 2008 for Microsoft Windows, and was later ported to Linux, macOS, iOS, and Android where it is the default browser built into the OS.</Description>
+		<Installer>msi</Installer>
+		<Install>/i ALLUSERS=1 NOGOOGLEUPDATEPING=1 /qn</Install>
+		<Uninstall>/x</Uninstall>
+		<Path>C:\Program Files\Google\Chrome\Application</Path>
+		<DetectionFile>Chrome.exe</DetectionFile>
+		<Enabled>True</Enabled>
+		<Categories>IT Admin Tools</Categories>
+		<Assignments Customer="">
+			<Group>All Users</Group>
+			<RequiredGroup></RequiredGroup>
+			<PilotGroup></PilotGroup>
+		</Assignments>
+	</Chrome>
+    <AcrobatReaderDC>
+		<Vendor>Adobe Systems</Vendor>
+		<Product>AcrobatReaderDC</Product>
+		<Architecture>x64</Architecture>
+		<Evergreen>Get-EvergreenApp -Name AdobeAcrobatReaderDC | Where-Object { $_.Architecture -eq "x64" -and $_.Language -eq "English" }</Evergreen>
+		<DisplayName>Acrobat Reader DC</DisplayName>
+		<Description>Adobe Acrobat Reader DC software is the free, trusted global standard for viewing, printing, signing, sharing, and annotating PDFs. It's the only PDF viewer that can open and interact with all types of PDF content – including forms and multimedia.</Description>
+		<Installer>exe</Installer>
+		<Install>-sfx_nu /sALL /msi EULA_ACCEPT=YES ENABLE_CHROMEEXT=0 DISABLE_BROWSER_INTEGRATION=1 ENABLE_OPTIMIZATION=YES ADD_THUMBNAILPREVIEW=0 DISABLEDESKTOPSHORTCUT=1 UPDATE_MODE=0 DISABLE_ARM_SERVICE_INSTALL=1</Install>
+		<Uninstall>/x</Uninstall>
+		<Path>C:\Program Files (x86)\Adobe\Acrobat Reader DC\Reader</Path>
+		<Enabled>True</Enabled>
+		<Categories>IT Admin Tools</Categories>
+		<Assignments Customer="">
+			<Group>All Users</Group>
+			<RequiredGroup></RequiredGroup>
+			<PilotGroup></PilotGroup>
+		</Assignments>
+	</AcrobatReaderDC>
+    <MicrosoftWvdRemoteDesktop>
+		<Vendor>Microsoft</Vendor>
+		<Product>WvD Remote Desktop</Product>
+		<Architecture>x64</Architecture>
+		<Evergreen>Get-EvergreenApp -Name MicrosoftWvdRemoteDesktop | Where-Object { $_.Architecture -eq "$Architecture" }</Evergreen>
+		<DisplayName>Microsoft WvD Remote Desktop</DisplayName>
+		<Description>You can use the Remote Desktop client for Windows Desktop to access Windows apps and desktops remotely from a different Windows device.</Description>
+		<Installer>msi</Installer>
+		<Install>/i ALLUSERS=1 /qn</Install>
+		<Uninstall>/x</Uninstall>
+		<Path>C:\Program Files\Remote Desktop</Path>
+		<Enabled>True</Enabled>
+		<Categories>IT Admin Tools</Categories>
+		<Assignments Customer="">
+			<Group>All Users</Group>
+			<RequiredGroup></RequiredGroup>
+			<PilotGroup></PilotGroup>
+		</Assignments>
+	</MicrosoftWvdRemoteDesktop>   
 </Applications>
