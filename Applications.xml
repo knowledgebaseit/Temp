@@ -222,7 +222,7 @@
 		<DisplayName>Microsoft WvD Remote Desktop</DisplayName>
 		<Description>You can use the Remote Desktop client for Windows Desktop to access Windows apps and desktops remotely from a different Windows device.</Description>
 		<Installer>msi</Installer>
-		<Install>/i ALLUSERS=1 /qn</Install>
+		<Install>ALLUSERS=1 REBOOT=ReallySuppress /norestart /qn /L*V</Install>
 		<Uninstall>/x</Uninstall>
 		<Path>C:\Program Files\Remote Desktop</Path>
 		<Enabled>True</Enabled>
