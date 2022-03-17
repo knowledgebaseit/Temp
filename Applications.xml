@@ -50,7 +50,7 @@
 		<Uninstall>uninstall.exe</Uninstall>
 		<Path>C:\Program Files\FileZilla FTP Client</Path>
 		<DetectionFile>FileZilla.exe</DetectionFile>
-		<Enabled>False</Enabled>
+		<Enabled>True</Enabled>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group>All Users</Group>
