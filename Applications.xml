@@ -10,7 +10,7 @@
 		<Install>/S</Install>
 		<Uninstall>uninstall.exe</Uninstall>
 		<Path>C:\Program Files\NotepadPlusPlus</Path>
-		<Enabled>False</Enabled>
+		<Enabled>True</Enabled>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group>All Users</Group>
@@ -30,7 +30,7 @@
 		<Uninstall>unins000.exe</Uninstall>
 		<Path>C:\Program Files (x86)\WinSCP</Path>
 		<DetectionFile>WinSCP.exe</DetectionFile>
-		<Enabled>False</Enabled>
+		<Enabled>True</Enabled>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group>All Users</Group>
@@ -70,7 +70,7 @@
 		<Uninstall>/x</Uninstall>
 		<Path>C:\Program Files\7-Zip</Path>
 		<DetectionFile>7zG.exe</DetectionFile>
-		<Enabled>False</Enabled>
+		<Enabled>True</Enabled>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group>All Users</Group>
@@ -89,7 +89,7 @@
 		<Install>/VERYSILENT /SUPPRESSMESSAGEBOXES /CLOSEAPPLICATIONS /RESTARTAPPLICATIONS /NORESTART</Install>
 		<Uninstall>unins000.exe</Uninstall>
 		<Path>C:\Program Files\Greenshot</Path>
-		<Enabled>False</Enabled>
+		<Enabled>True</Enabled>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group>All Users</Group>
@@ -109,7 +109,7 @@
 		<Uninstall>unins000.exe</Uninstall>
 		<Path>C:\Program Files (x86)\JAM Software\TreeSize Free</Path>
 		<DetectionFile>TreeSizeFree.exe</DetectionFile>
-		<Enabled>False</Enabled>
+		<Enabled>True</Enabled>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group>All Users</Group>
@@ -128,7 +128,7 @@
 		<Install>/i ALLUSERS=1 /qn</Install>
 		<Uninstall>/X</Uninstall>
 		<Path>C:\Program Files\Mozilla Firefox</Path>
-		<Enabled>False</Enabled>
+		<Enabled>True</Enabled>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group>All Users</Group>
@@ -147,7 +147,7 @@
 		<Install>/VERYSILENT /NORESTART /RESTARTEXITCODE=3010 /SUPPRESSMSGBOXES /SP-</Install>
 		<Uninstall>unins000.exe</Uninstall>
 		<Path>C:\Program Files\GIMP 2</Path>
-		<Enabled>False</Enabled>
+		<Enabled>True</Enabled>
 		<PMPC>False</PMPC>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
@@ -160,14 +160,14 @@
 		<Vendor>Foxit Software</Vendor>
 		<Product>FoxitReader</Product>
 		<Architecture>x64</Architecture>
-		<Evergreen>Get-EvergreenApp -Name FoxitReader | Where-Object { $_.Language -eq "English" }</Evergreen>
+		<Evergreen>Get-EvergreenApp -Name FoxitReader | Where-Object { $_.Language -eq "Dutch" }</Evergreen>
 		<DisplayName>Foxit Reader</DisplayName>
 		<Description>Foxit Reader is a multilingual freemium PDF tool that can create, view, edit, digitally sign, and print PDF files.</Description>
 		<Installer>exe</Installer>
 		<Install>/verysilent</Install>
 		<Uninstall></Uninstall>
 		<Path>C:\Program Files\Foxit Reader</Path>
-		<Enabled>False</Enabled>
+		<Enabled>True</Enabled>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group>All Users</Group>
@@ -187,7 +187,7 @@
 		<Uninstall>/x</Uninstall>
 		<Path>C:\Program Files\Google\Chrome\Application</Path>
 		<DetectionFile>Chrome.exe</DetectionFile>
-		<Enabled>False</Enabled>
+		<Enabled>True</Enabled>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group>All Users</Group>
@@ -206,7 +206,7 @@
 		<Install>-sfx_nu /sALL /msi EULA_ACCEPT=YES ENABLE_CHROMEEXT=0 DISABLE_BROWSER_INTEGRATION=1 ENABLE_OPTIMIZATION=YES ADD_THUMBNAILPREVIEW=0 DISABLEDESKTOPSHORTCUT=1 UPDATE_MODE=0 DISABLE_ARM_SERVICE_INSTALL=1</Install>
 		<Uninstall>/x</Uninstall>
 		<Path>C:\Program Files (x86)\Adobe\Acrobat Reader DC\Reader</Path>
-		<Enabled>False</Enabled>
+		<Enabled>True</Enabled>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group>All Users</Group>
