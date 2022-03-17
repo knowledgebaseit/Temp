@@ -216,10 +216,10 @@
 	</AcrobatReaderDC>
     <MicrosoftWvdRemoteDesktop>
 		<Vendor>Microsoft</Vendor>
-		<Product>WvDRemoteDesktop</Product>
+		<Product>AvDRemoteDesktop</Product>
 		<Architecture>x64</Architecture>
 		<Evergreen>Get-EvergreenApp -Name MicrosoftWvdRemoteDesktop | Where-Object { $_.Architecture -eq "x64" -and $_.Channel -eq "Public" }</Evergreen>
-		<DisplayName>Microsoft WvD Remote Desktop</DisplayName>
+		<DisplayName>Microsoft AvD Remote Desktop</DisplayName>
 		<Description>You can use the Remote Desktop client for Windows Desktop to access Windows apps and desktops remotely from a different Windows device.</Description>
 		<Installer>msi</Installer>
 		<Install>ALLUSERS=1 REBOOT=ReallySuppress /norestart /qn /L*V</Install>
