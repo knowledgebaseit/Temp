@@ -1,4 +1,43 @@
 <Applications>
+    <SevenZip>
+		<Vendor>7Zip</Vendor>
+		<Product>7Zip</Product>
+		<Architecture>x64</Architecture>
+		<Evergreen>Get-EvergreenApp -Name 7zip | Where-Object { $_.Architecture -eq "x64" -and $_.URI -like "*.msi" }</Evergreen>
+		<DisplayName>7-Zip</DisplayName>
+		<Description>7-Zip is a free and open-source file archiver, a utility used to place groups of files within compressed containers known as "archives". It is developed by Igor Pavlov and was first released in 1999. 7-Zip uses its own 7z archive format, but can read and write several other archive formats.</Description>
+		<Installer>msi</Installer>
+		<Install>ALLUSERS=1 /qn</Install>
+		<Uninstall></Uninstall>
+		<Path>C:\Program Files\7-Zip</Path>
+		<DetectionFile></DetectionFile>
+		<Enabled>True</Enabled>
+		<Categories>IT Admin Tools</Categories>
+		<Assignments Customer="">
+			<Group></Group>
+			<RequiredGroup></RequiredGroup>
+			<PilotGroup></PilotGroup>
+		</Assignments>
+	</SevenZip>
+	<AcrobatReaderDC>
+		<Vendor>Adobe Systems</Vendor>
+		<Product>AcrobatReaderDC</Product>
+		<Architecture>x64</Architecture>
+		<Evergreen>Get-EvergreenApp -Name AdobeAcrobatReaderDC | Where-Object { $_.Architecture -eq "x64" -and $_.Language -eq "Dutch" }</Evergreen>
+		<DisplayName>Acrobat Reader DC</DisplayName>
+		<Description>Adobe Acrobat Reader DC software is the free, trusted global standard for viewing, printing, signing, sharing, and annotating PDFs. It's the only PDF viewer that can open and interact with all types of PDF content – including forms and multimedia.</Description>
+		<Installer>exe</Installer>
+		<Install>-sfx_nu /sALL /msi EULA_ACCEPT=YES ENABLE_CHROMEEXT=0 DISABLE_BROWSER_INTEGRATION=1 ENABLE_OPTIMIZATION=YES ADD_THUMBNAILPREVIEW=0 DISABLEDESKTOPSHORTCUT=1 UPDATE_MODE=0 DISABLE_ARM_SERVICE_INSTALL=1</Install>
+		<Uninstall>/x</Uninstall>
+		<Path>C:\Program Files (x86)\Adobe\Acrobat Reader DC\Reader</Path>
+		<Enabled>False</Enabled>
+		<Categories>IT Admin Tools</Categories>
+		<Assignments Customer="">
+			<Group></Group>
+			<RequiredGroup></RequiredGroup>
+			<PilotGroup></PilotGroup>
+		</Assignments>
+	</AcrobatReaderDC>
 	<NotePadPlusPlus>
 		<Vendor>NotepadPlusPlus Team</Vendor>
 		<Product>NotepadPlusPlus</Product>
@@ -8,16 +47,73 @@
 		<Description>Notepad++ is a text and source code editor for use with Microsoft Windows. It supports tabbed editing, which allows working with multiple open files in a single window. The project's name comes from the C increment operator. Notepad++ is distributed as free software.</Description>
 		<Installer>exe</Installer>
 		<Install>/S</Install>
-		<Uninstall>uninstall.exe</Uninstall>
-		<Path>C:\Program Files\NotepadPlusPlus</Path>
+		<Uninstall>uninstall.exe /S</Uninstall>
+		<Path>C:\Program Files\Notepad++</Path>
 		<Enabled>True</Enabled>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
-			<Group>All Users</Group>
+			<Group></Group>
 			<RequiredGroup></RequiredGroup>
 			<PilotGroup></PilotGroup>
 		</Assignments>
 	</NotePadPlusPlus>
+	<MicrosoftNETDesktop>
+		<Vendor>Microsoft.NET</Vendor>
+		<Product>MicrosoftNETDesktop</Product>
+		<Architecture>x64</Architecture>
+		<Evergreen>Get-EvergreenApp -Name Microsoft.NET | Where-Object { $_.Architecture -eq "x64" -and $_.Channel -eq "Current" -and $_.Installer -like "windowsdesktop" -and $_.URI -like "*.exe" }</Evergreen>
+		<DisplayName>Microsoft.NET</DisplayName>
+		<Description>The .NET Desktop SDK, which includes Windows Forms (WinForms) and Windows Presentation Foundation (WPF)</Description>
+		<Installer>exe</Installer>
+		<Install>/S</Install>
+		<Uninstall>windowsdesktop-runtime-5.0.15-win-x64.exe /uninstall /quiet</Uninstall>
+		<Path>C:\ProgramData\Package Cache\{1e198010-5aa4-4fa4-b886-a31eb45f4661}</Path>
+		<Enabled>True</Enabled>
+		<Categories>IT Admin Tools</Categories>
+		<Assignments Customer="">
+			<Group></Group>
+			<RequiredGroup></RequiredGroup>
+			<PilotGroup></PilotGroup>
+		</Assignments>
+	</MicrosoftNETDesktop>
+	<Microsoft365Apps>
+		<Vendor>Microsoft365Apps</Vendor>
+		<Product>Microsoft365Apps</Product>
+		<Architecture>x64</Architecture>
+		<Evergreen>Get-EvergreenApp -Name Microsoft365Apps | Where-Object { $_.Channel -eq "Current" -and $_.URI -like "*.exe" }</Evergreen>
+		<DisplayName>Microsoft.NET</DisplayName>
+		<Description>Microsoft Office 365 is a suite of cloud-based productivity and collaboration applications that integrates all Microsoft's existing online applications (Word, Excel, PowerPoint, OneNote, Outlook, Publisher, Sway, and Access) into a cloud service, adding Skype for Business and Microsoft Teams as the main communication.</Description>
+		<Installer>exe</Installer>
+		<Install></Install>
+		<Uninstall>uninstall.exe</Uninstall>
+		<Path>C:\Program Files\Microsoft Office</Path>
+		<Enabled>True</Enabled>
+		<Categories>IT Admin Tools</Categories>
+		<Assignments Customer="">
+			<Group></Group>
+			<RequiredGroup></RequiredGroup>
+			<PilotGroup></PilotGroup>
+		</Assignments>
+	</Microsoft365Apps>
+	<ZoomWindows>
+		<Vendor>ZoomWindows</Vendor>
+		<Product>ZoomWindows</Product>
+		<Architecture>x64</Architecture>
+		<Evergreen>Get-EvergreenApp -Name Zoom | Where-Object {$_.Platform -eq "Windows" -and $_.Type -eq "msi"}</Evergreen>
+		<DisplayName>ZoomWindows</DisplayName>
+		<Description>Zoom is a cloud-based video communications app that allows you to set up virtual video and audio conferencing, webinars, live chats, screen-sharing, and other collaborative capabilities.</Description>
+		<Installer>msi</Installer>
+		<Install>/qn</Install>
+		<Uninstall>/x</Uninstall>
+		<Path>C:\Program Files (x86)\Zoom</Path>
+		<Enabled>True</Enabled>
+		<Categories>IT Admin Tools</Categories>
+		<Assignments Customer="">
+			<Group></Group>
+			<RequiredGroup></RequiredGroup>
+			<PilotGroup></PilotGroup>
+		</Assignments>
+	</ZoomWindows>
     <WinSCP>
 		<Vendor>Martin Prikyl</Vendor>
 		<Product>WinSCP</Product>
@@ -27,13 +123,13 @@
 		<Description>WinSCP is a free and open-source SFTP, FTP, WebDAV, Amazon S3 and SCP client for Microsoft Windows. Its main function is secure file transfer between a local and a remote computer. Beyond this, WinSCP offers basic file manager and file synchronization functionality.</Description>
 		<Installer>exe</Installer>
 		<Install>/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-</Install>
-		<Uninstall>unins000.exe</Uninstall>
+		<Uninstall>unins000.exe /VERYSILENT /SUPPRESSMSGBOXES /NORESTART</Uninstall>
 		<Path>C:\Program Files (x86)\WinSCP</Path>
 		<DetectionFile>WinSCP.exe</DetectionFile>
 		<Enabled>False</Enabled>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
-			<Group>All Users</Group>
+			<Group></Group>
 			<RequiredGroup></RequiredGroup>
 			<PilotGroup></PilotGroup>
 		</Assignments>
@@ -53,31 +149,11 @@
 		<Enabled>False</Enabled>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
-			<Group>All Users</Group>
+			<Group></Group>
 			<RequiredGroup></RequiredGroup>
 			<PilotGroup></PilotGroup>
 		</Assignments>
 	</FileZilla>
-    <SevenZip>
-		<Vendor>7Zip</Vendor>
-		<Product>7Zip</Product>
-		<Architecture>x64</Architecture>
-		<Evergreen>Get-EvergreenApp -Name 7zip | Where-Object { $_.Architecture -eq "x64" -and $_.URI -like "*.msi" }</Evergreen>
-		<DisplayName>7-Zip</DisplayName>
-		<Description>7-Zip is a free and open-source file archiver, a utility used to place groups of files within compressed containers known as "archives". It is developed by Igor Pavlov and was first released in 1999. 7-Zip uses its own 7z archive format, but can read and write several other archive formats.</Description>
-		<Installer>msi</Installer>
-		<Install>/i ALLUSERS=1 /qn</Install>
-		<Uninstall>/x</Uninstall>
-		<Path>C:\Program Files\7-Zip</Path>
-		<DetectionFile>7zG.exe</DetectionFile>
-		<Enabled>False</Enabled>
-		<Categories>IT Admin Tools</Categories>
-		<Assignments Customer="">
-			<Group>All Users</Group>
-			<RequiredGroup></RequiredGroup>
-			<PilotGroup></PilotGroup>
-		</Assignments>
-	</SevenZip>
     <GreenShot>
 		<Vendor>GreenShot</Vendor>
 		<Product>GreenShot</Product>
@@ -92,7 +168,7 @@
 		<Enabled>False</Enabled>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
-			<Group>All Users</Group>
+			<Group></Group>
 			<RequiredGroup></RequiredGroup>
 			<PilotGroup></PilotGroup>
 		</Assignments>
@@ -112,7 +188,7 @@
 		<Enabled>False</Enabled>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
-			<Group>All Users</Group>
+			<Group></Group>
 			<RequiredGroup></RequiredGroup>
 			<PilotGroup></PilotGroup>
 		</Assignments>
@@ -121,7 +197,7 @@
 		<Vendor>Mozilla</Vendor>
 		<Product>Firefox</Product>
 		<Architecture>x64</Architecture>
-		<Evergreen>Get-EvergreenApp -Name MozillaFirefox | Where-Object { $_.Architecture -eq "x64" -and $_.Channel -eq "LATEST_FIREFOX_VERSION" -and $_.Language -eq "en-US" -and $_.Type -eq "exe" } | Select-Object -First 1</Evergreen>
+		<Evergreen>Get-EvergreenApp -Name MozillaFirefox | Where-Object { $_.Architecture -eq "x64" -and $_.Channel -eq "LATEST_FIREFOX_VERSION" -and $_.Language -eq "en-US" -and $_.Type -eq "msi" } | Select-Object -First 1</Evergreen>
 		<DisplayName>Mozilla Firefox</DisplayName>
 		<Description>Mozilla Firefox, or simply Firefox, is a free and open-source web browser developed by the Mozilla Foundation and its subsidiary, the Mozilla Corporation. Firefox uses the Gecko layout engine to render web pages, which implements current and anticipated web standards.</Description>
 		<Installer>msi</Installer>
@@ -131,7 +207,7 @@
 		<Enabled>False</Enabled>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
-			<Group>All Users</Group>
+			<Group></Group>
 			<RequiredGroup></RequiredGroup>
 			<PilotGroup></PilotGroup>
 		</Assignments>
@@ -151,7 +227,7 @@
 		<PMPC>False</PMPC>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
-			<Group>All Users</Group>
+			<Group></Group>
 			<RequiredGroup></RequiredGroup>
 			<PilotGroup></PilotGroup>
 		</Assignments>
@@ -170,7 +246,7 @@
 		<Enabled>False</Enabled>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
-			<Group>All Users</Group>
+			<Group></Group>
 			<RequiredGroup></RequiredGroup>
 			<PilotGroup></PilotGroup>
 		</Assignments>
@@ -190,30 +266,11 @@
 		<Enabled>False</Enabled>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
-			<Group>All Users</Group>
+			<Group></Group>
 			<RequiredGroup></RequiredGroup>
 			<PilotGroup></PilotGroup>
 		</Assignments>
 	</Chrome>
-    <AcrobatReaderDC>
-		<Vendor>Adobe Systems</Vendor>
-		<Product>AcrobatReaderDC</Product>
-		<Architecture>x64</Architecture>
-		<Evergreen>Get-EvergreenApp -Name AdobeAcrobatReaderDC | Where-Object { $_.Architecture -eq "x64" -and $_.Language -eq "Dutch" }</Evergreen>
-		<DisplayName>Acrobat Reader DC</DisplayName>
-		<Description>Adobe Acrobat Reader DC software is the free, trusted global standard for viewing, printing, signing, sharing, and annotating PDFs. It's the only PDF viewer that can open and interact with all types of PDF content – including forms and multimedia.</Description>
-		<Installer>exe</Installer>
-		<Install>-sfx_nu /sALL /msi EULA_ACCEPT=YES ENABLE_CHROMEEXT=0 DISABLE_BROWSER_INTEGRATION=1 ENABLE_OPTIMIZATION=YES ADD_THUMBNAILPREVIEW=0 DISABLEDESKTOPSHORTCUT=1 UPDATE_MODE=0 DISABLE_ARM_SERVICE_INSTALL=1</Install>
-		<Uninstall>/x</Uninstall>
-		<Path>C:\Program Files (x86)\Adobe\Acrobat Reader DC\Reader</Path>
-		<Enabled>False</Enabled>
-		<Categories>IT Admin Tools</Categories>
-		<Assignments Customer="">
-			<Group>All Users</Group>
-			<RequiredGroup></RequiredGroup>
-			<PilotGroup></PilotGroup>
-		</Assignments>
-	</AcrobatReaderDC>
     <MicrosoftWvdRemoteDesktop>
 		<Vendor>Microsoft</Vendor>
 		<Product>AvDRemoteDesktop</Product>
@@ -228,7 +285,7 @@
 		<Enabled>True</Enabled>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
-			<Group>All Users</Group>
+			<Group></Group>
 			<RequiredGroup></RequiredGroup>
 			<PilotGroup></PilotGroup>
 		</Assignments>
