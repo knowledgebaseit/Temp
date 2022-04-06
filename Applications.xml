@@ -47,7 +47,7 @@
 		<Description>Notepad++ is a text and source code editor for use with Microsoft Windows. It supports tabbed editing, which allows working with multiple open files in a single window. The project's name comes from the C increment operator. Notepad++ is distributed as free software.</Description>
 		<Installer>exe</Installer>
 		<Install>/S</Install>
-		<Uninstall>uninstall.exe /S</Uninstall>
+		<Uninstall></Uninstall>
 		<Path>C:\Program Files\Notepad++</Path>
 		<Enabled>True</Enabled>
 		<Categories>IT Admin Tools</Categories>
@@ -62,11 +62,11 @@
 		<Product>MicrosoftNETDesktop</Product>
 		<Architecture>x64</Architecture>
 		<Evergreen>Get-EvergreenApp -Name Microsoft.NET | Where-Object { $_.Architecture -eq "x64" -and $_.Channel -eq "Current" -and $_.Installer -like "windowsdesktop" -and $_.URI -like "*.exe" }</Evergreen>
-		<DisplayName>Microsoft.NET</DisplayName>
+		<DisplayName>Microsoft Windows Desktop Runtime</DisplayName>
 		<Description>The .NET Desktop SDK, which includes Windows Forms (WinForms) and Windows Presentation Foundation (WPF)</Description>
 		<Installer>exe</Installer>
 		<Install>/S</Install>
-		<Uninstall>windowsdesktop-runtime-5.0.15-win-x64.exe /uninstall /quiet</Uninstall>
+		<Uninstall></Uninstall>
 		<Path>C:\ProgramData\Package Cache\{1e198010-5aa4-4fa4-b886-a31eb45f4661}</Path>
 		<Enabled>True</Enabled>
 		<Categories>IT Admin Tools</Categories>
@@ -76,25 +76,6 @@
 			<PilotGroup></PilotGroup>
 		</Assignments>
 	</MicrosoftNETDesktop>
-	<Microsoft365Apps>
-		<Vendor>Microsoft365Apps</Vendor>
-		<Product>Microsoft365Apps</Product>
-		<Architecture>x64</Architecture>
-		<Evergreen>Get-EvergreenApp -Name Microsoft365Apps | Where-Object { $_.Channel -eq "Current" -and $_.URI -like "*.exe" }</Evergreen>
-		<DisplayName>Microsoft.NET</DisplayName>
-		<Description>Microsoft Office 365 is a suite of cloud-based productivity and collaboration applications that integrates all Microsoft's existing online applications (Word, Excel, PowerPoint, OneNote, Outlook, Publisher, Sway, and Access) into a cloud service, adding Skype for Business and Microsoft Teams as the main communication.</Description>
-		<Installer>exe</Installer>
-		<Install></Install>
-		<Uninstall>uninstall.exe</Uninstall>
-		<Path>C:\Program Files\Microsoft Office</Path>
-		<Enabled>True</Enabled>
-		<Categories>IT Admin Tools</Categories>
-		<Assignments Customer="">
-			<Group></Group>
-			<RequiredGroup></RequiredGroup>
-			<PilotGroup></PilotGroup>
-		</Assignments>
-	</Microsoft365Apps>
 	<ZoomWindows>
 		<Vendor>ZoomWindows</Vendor>
 		<Product>ZoomWindows</Product>
