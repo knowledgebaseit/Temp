@@ -29,7 +29,8 @@
 		<Installer>exe</Installer>
 		<Install>-sfx_nu /sALL /msi EULA_ACCEPT=YES ENABLE_CHROMEEXT=0 DISABLE_BROWSER_INTEGRATION=1 ENABLE_OPTIMIZATION=YES ADD_THUMBNAILPREVIEW=0 DISABLEDESKTOPSHORTCUT=1 UPDATE_MODE=0 DISABLE_ARM_SERVICE_INSTALL=1</Install>
 		<Uninstall></Uninstall>
-		<Path>C:\Program Files (x86)\Adobe\Acrobat Reader DC\Reader</Path>
+		<Path>C:\Program Files\Adobe</Path>
+		<DetectionFolder>Acrobat DC</DetectionFolder>
 		<Enabled>False</Enabled>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
@@ -68,6 +69,8 @@
 		<Install>/S</Install>
 		<Uninstall></Uninstall>
 		<Path>C:\ProgramData\Package Cache\{1e198010-5aa4-4fa4-b886-a31eb45f4661}</Path>
+		<DetectionPath>WinSCP.exe</DetectionPath>
+		<DetectionFile>WinSCP.exe</DetectionFile>
 		<Enabled>True</Enabled>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
