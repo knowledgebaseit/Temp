@@ -28,7 +28,7 @@
 		<Description>Adobe Acrobat Reader DC software is the free, trusted global standard for viewing, printing, signing, sharing, and annotating PDFs. It's the only PDF viewer that can open and interact with all types of PDF content – including forms and multimedia.</Description>
 		<Installer>exe</Installer>
 		<Install>-sfx_nu /sALL /msi EULA_ACCEPT=YES ENABLE_CHROMEEXT=0 DISABLE_BROWSER_INTEGRATION=1 ENABLE_OPTIMIZATION=YES ADD_THUMBNAILPREVIEW=0 DISABLEDESKTOPSHORTCUT=1 UPDATE_MODE=0 DISABLE_ARM_SERVICE_INSTALL=1</Install>
-		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE '<AppProduct>%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
+		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE 'Adobe Acrobat DC%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
 		<Path>C:\Program Files\Adobe</Path>
 		<DetectionFolder>Acrobat DC</DetectionFolder>
 		<Enabled>False</Enabled>
