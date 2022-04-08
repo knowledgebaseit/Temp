@@ -19,12 +19,12 @@
 			<PilotGroup></PilotGroup>
 		</Assignments>
 	</SevenZip>
-	<AcrobatReaderDC>
+	<AdobeAcrobatDC>
 		<Vendor>Adobe Systems</Vendor>
-		<Product>AcrobatReaderDC</Product>
+		<Product>AdobeAcrobatDC</Product>
 		<Architecture>x64</Architecture>
 		<Download>Get-EvergreenApp -Name AdobeAcrobatReaderDC | Where-Object { $_.Architecture -eq "x64" -and $_.Language -eq "Dutch" }</Download>
-		<DisplayName>Acrobat Reader DC</DisplayName>
+		<DisplayName>Adobe Acrobat DC</DisplayName>
 		<Description>Adobe Acrobat Reader DC software is the free, trusted global standard for viewing, printing, signing, sharing, and annotating PDFs. It's the only PDF viewer that can open and interact with all types of PDF content including forms and multimedia.</Description>
 		<Installer>exe</Installer>
 		<Install>&lt;Source&gt; -sfx_nu /sALL /msi EULA_ACCEPT=YES ENABLE_CHROMEEXT=0 DISABLE_BROWSER_INTEGRATION=1 ENABLE_OPTIMIZATION=YES ADD_THUMBNAILPREVIEW=0 DISABLEDESKTOPSHORTCUT=1 UPDATE_MODE=0 DISABLE_ARM_SERVICE_INSTALL=1 | Wait-Process &#xA;New-ItemProperty -LiteralPath "HKLM:\SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown" -Name 'bUpdater' -Value 0 -PropertyType DWord -Force -ea SilentlyContinue</Install>
@@ -38,7 +38,7 @@
 			<RequiredGroup></RequiredGroup>
 			<PilotGroup></PilotGroup>
 		</Assignments>
-	</AcrobatReaderDC>
+	</AdobeAcrobatDC>
 	<NotePadPlusPlus>
 		<Vendor>NotepadPlusPlus Team</Vendor>
 		<Product>NotepadPlusPlus</Product>
