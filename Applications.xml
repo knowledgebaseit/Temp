@@ -38,8 +38,8 @@
 			<RequiredGroup></RequiredGroup>
 			<PilotGroup></PilotGroup>
 		</Assignments>
-	</AdobeAcrobatDCEnglish>
-		<AdobeAcrobatDCDutch>
+	</AdobeAcrobatDCDutch>
+		<AdobeAcrobatDCEnglish>
 		<Vendor>Adobe Systems</Vendor>
 		<Product>AdobeAcrobatDC_English</Product>
 		<Architecture>x64</Architecture>
