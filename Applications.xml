@@ -27,7 +27,7 @@
 		<DisplayName>Adobe Acrobat DC</DisplayName>
 		<Description>Adobe Acrobat Reader DC software is the free, trusted global standard for viewing, printing, signing, sharing, and annotating PDFs. It's the only PDF viewer that can open and interact with all types of PDF content including forms and multimedia.</Description>
 		<Installer>exe</Installer>
-		<Install>Start-Process &lt;Source&gt; -sfx_nu /sALL /msi EULA_ACCEPT=YES ENABLE_CHROMEEXT=0 DISABLE_BROWSER_INTEGRATION=1 ENABLE_OPTIMIZATION=YES ADD_THUMBNAILPREVIEW=0 DISABLEDESKTOPSHORTCUT=1 UPDATE_MODE=0 DISABLE_ARM_SERVICE_INSTALL=1 | Wait-Process &#xA;New-ItemProperty -LiteralPath "HKLM:\SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown" -Name 'bUpdater' -Value 0 -PropertyType DWord -Force -ea SilentlyContinue</Install>
+		<Install>Start-Process &lt;Source&gt; &quot;-sfx_nu /sALL /msi EULA_ACCEPT=YES ENABLE_CHROMEEXT=0 DISABLE_BROWSER_INTEGRATION=1 ENABLE_OPTIMIZATION=YES ADD_THUMBNAILPREVIEW=0 DISABLEDESKTOPSHORTCUT=1 UPDATE_MODE=0 DISABLE_ARM_SERVICE_INSTALL=1&quot; -Wait &#xA;New-ItemProperty -LiteralPath "HKLM:\SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown" -Name 'bUpdater' -Value 0 -PropertyType DWord -Force -ea SilentlyContinue</Install>
 		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE '&lt;AppProduct&gt;%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
 		<Path>C:\Program Files\Adobe</Path>
 		<DetectionFolder>Acrobat DC</DetectionFolder>
