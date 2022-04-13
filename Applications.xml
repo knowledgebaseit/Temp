@@ -39,7 +39,7 @@
 			<PilotGroup></PilotGroup>
 		</Assignments>
 	</AdobeAcrobatDCDutch>
-		<AdobeAcrobatDCEnglish>
+	<AdobeAcrobatDCEnglish>
 		<Vendor>Adobe Systems</Vendor>
 		<Product>AdobeAcrobatDC_English</Product>
 		<Architecture>x64</Architecture>
@@ -51,7 +51,7 @@
 		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE '&lt;AppProduct&gt;%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
 		<Path>C:\Program Files\Adobe</Path>
 		<DetectionFolder>Acrobat DC</DetectionFolder>
-		<Enabled>False</Enabled>
+		<Enabled>True</Enabled>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group></Group>
@@ -59,26 +59,26 @@
 			<PilotGroup></PilotGroup>
 		</Assignments>
 	</AdobeAcrobatDCEnglish>
-	<AdobeAcrobatDC>
-		<Vendor>Adobe Systems</Vendor>
-		<Product>AdobeAcrobatDC</Product>
-		<Architecture>x64</Architecture>
-		<Download>Get-EvergreenApp -Name AdobeAcrobatReaderDC | Where-Object { $_.Architecture -eq "x64" -and $_.Language -eq "Dutch" }</Download>
-		<DisplayName>Adobe Acrobat DC</DisplayName>
-		<Description>Adobe Acrobat Reader DC software is the free, trusted global standard for viewing, printing, signing, sharing, and annotating PDFs. It's the only PDF viewer that can open and interact with all types of PDF content including forms and multimedia.</Description>
+	<CitrixWorkspaceApp>
+		<Vendor>Citrix Workspace App</Vendor>
+		<Product>CitrixWorkspaceApp</Product>
+		<Architecture>x86</Architecture>
+		<Download>Get-EvergreenApp -Name CitrixWorkspaceApp | Where-Object { $_.Stream -eq "Current" -and $_.URI -like "*.exe" }</Download>
+		<DisplayName>Citrix Workspace App</DisplayName>
+		<Description>Citrix Workspace app for Windows is an easy-to-install app that provides access to your applications and desktops using Citrix Virtual Apps and Desktops and Citrix DaaS (formerly Citrix Virtual Apps and Desktops service) from a remote client device.</Description>
 		<Installer>exe</Installer>
-		<Install>Start-Process &lt;Source&gt; &quot;-sfx_nu /sALL /msi EULA_ACCEPT=YES ENABLE_CHROMEEXT=0 DISABLE_BROWSER_INTEGRATION=1 ENABLE_OPTIMIZATION=YES ADD_THUMBNAILPREVIEW=0 DISABLEDESKTOPSHORTCUT=1 UPDATE_MODE=0 DISABLE_ARM_SERVICE_INSTALL=1&quot; -Wait &#xA;New-ItemProperty -LiteralPath "HKLM:\SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown" -Name 'bUpdater' -Value 0 -PropertyType DWord -Force -ea SilentlyContinue</Install>
-		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE '&lt;AppProduct&gt;%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
-		<Path>C:\Program Files\Adobe</Path>
-		<DetectionFolder>Acrobat DC</DetectionFolder>
-		<Enabled>False</Enabled>
+		<Install>Start-Process &lt;Source&gt; -ArgumentList &quot;/silent /AutoUpdateCheck=disabled&quot; &#xA;Start-Sleep -s 90</Install>
+		<Uninstall>Start-Process &lt;Source&gt; -ArgumentList &quot;/silent /uninstall&quot; &#xA;Start-Sleep -s 90</Uninstall>
+		<Path>C:\Program Files (x86)\Citrix</Path>
+		<DetectionFolder>ICA Client</DetectionFolder>
+		<Enabled>True</Enabled>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group></Group>
 			<RequiredGroup></RequiredGroup>
 			<PilotGroup></PilotGroup>
 		</Assignments>
-	</AdobeAcrobatDC>
+	</CitrixWorkspaceApp>
 	<NotePadPlusPlus>
 		<Vendor>NotepadPlusPlus Team</Vendor>
 		<Product>NotepadPlusPlus</Product>
