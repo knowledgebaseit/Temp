@@ -1,5 +1,5 @@
 <Applications>
-    <SevenZip>
+	<SevenZip>
 		<Vendor>7Zip</Vendor>
 		<Product>7Zip</Product>
 		<Architecture>x64</Architecture>
@@ -79,6 +79,26 @@
 			<PilotGroup></PilotGroup>
 		</Assignments>
 	</CitrixWorkspaceApp>
+	<FileZilla>
+		<Vendor>Tim Kosse</Vendor>
+		<Product>FileZilla</Product>
+		<Architecture>x86</Architecture>
+		<Download>Get-EvergreenApp -Name FileZilla</Download>
+		<DisplayName>FileZilla FTP Client</DisplayName>
+		<Description>FileZilla is a free software, cross-platform FTP application, consisting of FileZilla Client and FileZilla Server. Client binaries are available for Windows, Linux, and macOS, server binaries are available for Windows only.</Description>
+		<Installer>exe</Installer>
+		<Install>Start-Process &lt;Source&gt; -ArgumentList &quot;/S&quot;</Install>
+		<Uninstall>Start-Process "C:\Program Files\FileZilla FTP Client\uninstall.exe"-ArgumentList &quot;/S&quot;</Uninstall>
+		<Path>C:\Program Files</Path>
+		<DetectionFolder>FileZilla FTP Client</DetectionFolder>
+		<Enabled>True</Enabled>
+		<Categories>IT Admin Tools</Categories>
+		<Assignments Customer="">
+			<Group></Group>
+			<RequiredGroup></RequiredGroup>
+			<PilotGroup></PilotGroup>
+		</Assignments>
+	</FileZilla>
 	<NotePadPlusPlus>
 		<Vendor>NotepadPlusPlus Team</Vendor>
 		<Product>NotepadPlusPlus</Product>
@@ -158,26 +178,6 @@
 			<PilotGroup></PilotGroup>
 		</Assignments>
 	</WinSCP>
-	<FileZilla>
-		<Vendor>Tim Kosse</Vendor>
-		<Product>FileZilla</Product>
-		<Architecture>x86</Architecture>
-		<Download>Get-EvergreenApp -Name FileZilla</Download>
-		<DisplayName>FileZilla FTP Client</DisplayName>
-		<Description>FileZilla is a free software, cross-platform FTP application, consisting of FileZilla Client and FileZilla Server. Client binaries are available for Windows, Linux, and macOS, server binaries are available for Windows only.</Description>
-		<Installer>exe</Installer>
-		<Install>/S</Install>
-		<Uninstall>uninstall.exe</Uninstall>
-		<Path>C:\Program Files\FileZilla FTP Client</Path>
-		<DetectionFile>FileZilla.exe</DetectionFile>
-		<Enabled>False</Enabled>
-		<Categories>IT Admin Tools</Categories>
-		<Assignments Customer="">
-			<Group></Group>
-			<RequiredGroup></RequiredGroup>
-			<PilotGroup></PilotGroup>
-		</Assignments>
-	</FileZilla>
     <GreenShot>
 		<Vendor>GreenShot</Vendor>
 		<Product>GreenShot</Product>
