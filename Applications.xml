@@ -13,6 +13,7 @@
 		<Path>C:\Program Files\7-Zip</Path>
 		<DetectionFile></DetectionFile>
 		<Enabled>True</Enabled>
+		<Logo>7Zip</Logo>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group></Group>
@@ -27,13 +28,14 @@
 		<Architecture>x64</Architecture>
 		<Download>Get-EvergreenApp -Name AdobeAcrobatReaderDC | Where-Object { $_.Architecture -eq "x64" -and $_.Language -eq "Dutch" }</Download>
 		<DisplayName>Adobe Acrobat DC</DisplayName>
-		<Description>Adobe Acrobat Reader DC software is the free, trusted global standard for viewing, printing, signing, sharing, and annotating PDFs. It's the only PDF viewer that can open and interact with all types of PDF content including forms and multimedia.</Description>
+		<Description>Adobe Acrobat Reader DC-software is de gratis, vertrouwde wereldwijde standaard voor het bekijken, afdrukken, ondertekenen, delen en annoteren van PDF's. Het is de enige PDF-viewer die alle soorten PDF-inhoud kan openen en gebruiken, inclusief formulieren en multimedia.</Description>
 		<Installer>exe</Installer>
 		<Install>Start-Process &lt;Source&gt; &quot;-sfx_nu /sALL /msi EULA_ACCEPT=YES ENABLE_CHROMEEXT=0 DISABLE_BROWSER_INTEGRATION=1 ENABLE_OPTIMIZATION=YES ADD_THUMBNAILPREVIEW=0 DISABLEDESKTOPSHORTCUT=1 UPDATE_MODE=0 DISABLE_ARM_SERVICE_INSTALL=1&quot; -Wait &#xA;New-ItemProperty -LiteralPath "HKLM:\SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown" -Name 'bUpdater' -Value 0 -PropertyType DWord -Force -ea SilentlyContinue</Install>
 		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE '&lt;Name&gt;%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
 		<Path>C:\Program Files\Adobe</Path>
 		<DetectionFolder>Acrobat DC</DetectionFolder>
-		<Enabled>False</Enabled>
+		<Enabled>True</Enabled>
+		<Logo></Logo>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group></Group>
@@ -55,6 +57,7 @@
 		<Path>C:\Program Files\Adobe</Path>
 		<DetectionFolder>Acrobat DC</DetectionFolder>
 		<Enabled>True</Enabled>
+		<Logo></Logo>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group></Group>
@@ -71,11 +74,12 @@
 		<DisplayName>Citrix Workspace App</DisplayName>
 		<Description>Citrix Workspace app for Windows is an easy-to-install app that provides access to your applications and desktops using Citrix Virtual Apps and Desktops and Citrix DaaS (formerly Citrix Virtual Apps and Desktops service) from a remote client device.</Description>
 		<Installer>exe</Installer>
-		<Install>Start-Process &lt;Source&gt; -ArgumentList &quot;/silent /AutoUpdateCheck=disabled&quot; &#xA;Start-Sleep -s 90</Install>
+		<Install>Start-Process &lt;Source&gt; -ArgumentList &quot;/silent /noreboot /AutoUpdateCheck=disabled&quot; &#xA;Start-Sleep -s 90</Install>
 		<Uninstall>Start-Process &lt;Source&gt; -ArgumentList &quot;/silent /uninstall&quot; &#xA;Start-Sleep -s 90</Uninstall>
 		<Path>C:\Program Files (x86)\Citrix</Path>
 		<DetectionFolder>ICA Client</DetectionFolder>
 		<Enabled>True</Enabled>
+		<Logo></Logo>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group></Group>
@@ -97,6 +101,7 @@
 		<Path>C:\Program Files</Path>
 		<DetectionFolder>FileZilla FTP Client</DetectionFolder>
 		<Enabled>True</Enabled>
+		<Logo></Logo>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group></Group>
@@ -113,10 +118,11 @@
 		<DisplayName>Foxit Reader</DisplayName>
 		<Description>Foxit Reader is een meertalige freemium PDF-tool waarmee u PDF-bestanden kunt maken, bekijken, bewerken, digitaal ondertekenen en afdrukken.</Description>
 		<Installer>msi</Installer>
-		<Install>msiexec /i &lt;Source&gt; ALLUSERS=1 /qn &#xA;Start-Sleep -s 90</Install>
+		<Install>msiexec /i &lt;Source&gt; "DESKTOP_SHORTCUT=\"0\" MAKEDEFAULT=\"0\" VIEWINBROWSER=\"0\" LAUNCHCHECKDEFAULT=\"0\" AUTO_UPDATE=\"0\" /passive /norestart /qn" &#xA;Start-Sleep -s 90</Install>
 		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE '&lt;Name&gt;%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
 		<Path>C:\Program Files\Foxit Reader</Path>
 		<Enabled>True</Enabled>
+		<Logo></Logo>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group></Group>
@@ -124,26 +130,49 @@
 			<PilotGroup></PilotGroup>
 		</Assignments>
 	</FoxitReaderDutch>
-	<FoxitReader>
+	<FoxitReaderEnglish>
 		<Vendor>Foxit Software</Vendor>
-		<Product>FoxitReader</Product>
+		<Product>FoxitReader_English</Product>
 		<Name>Foxit PDF Reader</Name>
 		<Architecture>x64</Architecture>
-		<Download>Get-EvergreenApp -Name FoxitReader | Where-Object { $_.Language -eq "Dutch" }</Download>
+		<Download>Get-EvergreenApp -Name FoxitReader | Where-Object { $_.Language -eq "English" }</Download>
 		<DisplayName>Foxit Reader</DisplayName>
-		<Description>Foxit Reader is a multilingual freemium PDF tool that can create, view, edit, digitally sign, and print PDF files.</Description>
-		<Installer>exe</Installer>
-		<Install>/verysilent</Install>
-		<Uninstall></Uninstall>
+		<Description>Foxit Reader is een meertalige freemium PDF-tool waarmee u PDF-bestanden kunt maken, bekijken, bewerken, digitaal ondertekenen en afdrukken.</Description>
+		<Installer>msi</Installer>
+		<Install>msiexec /i &lt;Source&gt; "DESKTOP_SHORTCUT=\"0\" MAKEDEFAULT=\"0\" VIEWINBROWSER=\"0\" LAUNCHCHECKDEFAULT=\"0\" AUTO_UPDATE=\"0\" /passive /norestart /qn" &#xA;Start-Sleep -s 90</Install>
+		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE '&lt;Name&gt;%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
 		<Path>C:\Program Files\Foxit Reader</Path>
-		<Enabled>False</Enabled>
+		<Enabled>True</Enabled>
+		<Logo></Logo>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group></Group>
 			<RequiredGroup></RequiredGroup>
 			<PilotGroup></PilotGroup>
 		</Assignments>
-	</FoxitReader>
+	</FoxitReaderEnglish>
+	<Chrome>
+		<Vendor>Google</Vendor>
+		<Product>Chrome</Product>
+		<Name>Google Chrome</Name>
+		<Architecture>x64</Architecture>
+		<Download>Get-EvergreenApp -Name GoogleChrome | Where-Object { $_.Architecture -eq "x64" -and $_.Channel -eq "stable" }</Download>
+		<DisplayName>Google Chrome</DisplayName>
+		<Description>Google Chrome is a cross-platform web browser developed by Google. It was first released in 2008 for Microsoft Windows, and was later ported to Linux, macOS, iOS, and Android where it is the default browser built into the OS.</Description>
+		<Installer>msi</Installer>
+		<Install>msiexec /i &lt;Source&gt; ALLUSERS=1 NOGOOGLEUPDATEPING=1 /qn</Install>
+		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE '&lt;Name&gt;%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
+		<Path>C:\Program Files\Google</Path>
+		<DetectionFolder>Chrome</DetectionFolder>
+		<Enabled>True</Enabled>
+		<Logo></Logo>
+		<Categories>IT Admin Tools</Categories>
+		<Assignments Customer="">
+			<Group></Group>
+			<RequiredGroup></RequiredGroup>
+			<PilotGroup></PilotGroup>
+		</Assignments>
+	</Chrome>
 	<NotePadPlusPlus>
 		<Vendor>NotepadPlusPlus Team</Vendor>
 		<Product>NotepadPlusPlus</Product>
@@ -153,10 +182,11 @@
 		<DisplayName>Notepad++</DisplayName>
 		<Description>Notepad++ is a text and source code editor for use with Microsoft Windows. It supports tabbed editing, which allows working with multiple open files in a single window. The project's name comes from the C increment operator. Notepad++ is distributed as free software.</Description>
 		<Installer>exe</Installer>
-		<Install>/S</Install>
-		<Uninstall></Uninstall>
+		<Install>Start-Process &lt;Source&gt; -ArgumentList &quot;/S&quot;</Install>
+		<Uninstall>Start-Process &quot;C:\Program Files\Notepad++\uninstall.exe&quot; -ArgumentList &quot;/S&quot;</Uninstall>
 		<Path>C:\Program Files\Notepad++</Path>
 		<Enabled>True</Enabled>
+		<Logo></Logo>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group></Group>
@@ -179,6 +209,7 @@
 		<DetectionPath>WinSCP.exe</DetectionPath>
 		<DetectionFile>WinSCP.exe</DetectionFile>
 		<Enabled>True</Enabled>
+		<Logo></Logo>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group></Group>
@@ -199,6 +230,7 @@
 		<Uninstall>/x</Uninstall>
 		<Path>C:\Program Files (x86)\Zoom</Path>
 		<Enabled>True</Enabled>
+		<Logo></Logo>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group></Group>
@@ -219,7 +251,8 @@
 		<Uninstall>unins000.exe /VERYSILENT /SUPPRESSMSGBOXES /NORESTART</Uninstall>
 		<Path>C:\Program Files (x86)\WinSCP</Path>
 		<DetectionFile>WinSCP.exe</DetectionFile>
-		<Enabled>False</Enabled>
+		<Enabled>True</Enabled>
+		<Logo></Logo>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group></Group>
@@ -239,7 +272,8 @@
 		<Install>/VERYSILENT /SUPPRESSMESSAGEBOXES /CLOSEAPPLICATIONS /RESTARTAPPLICATIONS /NORESTART</Install>
 		<Uninstall>unins000.exe</Uninstall>
 		<Path>C:\Program Files\Greenshot</Path>
-		<Enabled>False</Enabled>
+		<Enabled>True</Enabled>
+		<Logo></Logo>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group></Group>
@@ -260,7 +294,8 @@
 		<Uninstall>unins000.exe</Uninstall>
 		<Path>C:\Program Files (x86)\JAM Software\TreeSize Free</Path>
 		<DetectionFile>TreeSizeFree.exe</DetectionFile>
-		<Enabled>False</Enabled>
+		<Enabled>True</Enabled>
+		<Logo></Logo>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group></Group>
@@ -280,7 +315,8 @@
 		<Install>/i ALLUSERS=1 /qn</Install>
 		<Uninstall>/X</Uninstall>
 		<Path>C:\Program Files\Mozilla Firefox</Path>
-		<Enabled>False</Enabled>
+		<Enabled>True</Enabled>
+		<Logo></Logo>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group></Group>
@@ -300,8 +336,8 @@
 		<Install>/VERYSILENT /NORESTART /RESTARTEXITCODE=3010 /SUPPRESSMSGBOXES /SP-</Install>
 		<Uninstall>unins000.exe</Uninstall>
 		<Path>C:\Program Files\GIMP 2</Path>
-		<Enabled>False</Enabled>
-		<PMPC>False</PMPC>
+		<Enabled>True</Enabled>
+		<Logo></Logo>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group></Group>
@@ -322,7 +358,8 @@
 		<Uninstall>/x</Uninstall>
 		<Path>C:\Program Files\Google\Chrome\Application</Path>
 		<DetectionFile>Chrome.exe</DetectionFile>
-		<Enabled>False</Enabled>
+		<Enabled>True</Enabled>
+		<Logo></Logo>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group></Group>
@@ -343,6 +380,7 @@
 		<Uninstall>/x</Uninstall>
 		<Path>C:\Program Files\Remote Desktop</Path>
 		<Enabled>True</Enabled>
+		<Logo></Logo>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group></Group>
