@@ -263,7 +263,7 @@
     <GreenShot>
 		<Vendor>GreenShot</Vendor>
 		<Product>GreenShot</Product>
-		<Name></Name>
+		<Name>GreenShot</Name>
 		<Architecture>x86</Architecture>
 		<Download>Get-EvergreenApp -Name GreenShot | Where-Object { $_.Architecture -eq "x86" -and $_.URI -like "*RELEASE.exe" }</Download>
 		<DisplayName>GreenShot</DisplayName>
