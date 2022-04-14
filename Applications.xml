@@ -2,13 +2,14 @@
 	<SevenZip>
 		<Vendor>7Zip</Vendor>
 		<Product>7Zip</Product>
+		<Name>7-Zip</Name>
 		<Architecture>x64</Architecture>
 		<Download>Get-EvergreenApp -Name 7zip | Where-Object { $_.Architecture -eq "x64" -and $_.URI -like "*.msi" }</Download>
 		<DisplayName>7-Zip</DisplayName>
 		<Description>7-Zip is a free and open-source file archiver, a utility used to place groups of files within compressed containers known as "archives". It is developed by Igor Pavlov and was first released in 1999. 7-Zip uses its own 7z archive format, but can read and write several other archive formats.</Description>
 		<Installer>msi</Installer>
 		<Install>msiexec /i &lt;Source&gt; ALLUSERS=1 /qn</Install>
-		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE '&lt;AppProduct&gt;%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
+		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE '&lt;Name&gt;%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
 		<Path>C:\Program Files\7-Zip</Path>
 		<DetectionFile></DetectionFile>
 		<Enabled>True</Enabled>
@@ -22,13 +23,14 @@
 	<AdobeAcrobatDCDutch>
 		<Vendor>Adobe Systems</Vendor>
 		<Product>AdobeAcrobatDC_Dutch</Product>
+		<Name>Adobe Acrobat DC</Name>
 		<Architecture>x64</Architecture>
 		<Download>Get-EvergreenApp -Name AdobeAcrobatReaderDC | Where-Object { $_.Architecture -eq "x64" -and $_.Language -eq "Dutch" }</Download>
 		<DisplayName>Adobe Acrobat DC</DisplayName>
 		<Description>Adobe Acrobat Reader DC software is the free, trusted global standard for viewing, printing, signing, sharing, and annotating PDFs. It's the only PDF viewer that can open and interact with all types of PDF content including forms and multimedia.</Description>
 		<Installer>exe</Installer>
 		<Install>Start-Process &lt;Source&gt; &quot;-sfx_nu /sALL /msi EULA_ACCEPT=YES ENABLE_CHROMEEXT=0 DISABLE_BROWSER_INTEGRATION=1 ENABLE_OPTIMIZATION=YES ADD_THUMBNAILPREVIEW=0 DISABLEDESKTOPSHORTCUT=1 UPDATE_MODE=0 DISABLE_ARM_SERVICE_INSTALL=1&quot; -Wait &#xA;New-ItemProperty -LiteralPath "HKLM:\SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown" -Name 'bUpdater' -Value 0 -PropertyType DWord -Force -ea SilentlyContinue</Install>
-		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE '&lt;AppProduct&gt;%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
+		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE '&lt;Name&gt;%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
 		<Path>C:\Program Files\Adobe</Path>
 		<DetectionFolder>Acrobat DC</DetectionFolder>
 		<Enabled>False</Enabled>
@@ -42,13 +44,14 @@
 	<AdobeAcrobatDCEnglish>
 		<Vendor>Adobe Systems</Vendor>
 		<Product>AdobeAcrobatDC_English</Product>
+		<Name>Adobe Acrobat DC</Name>
 		<Architecture>x64</Architecture>
 		<Download>Get-EvergreenApp -Name AdobeAcrobatReaderDC | Where-Object { $_.Architecture -eq "x64" -and $_.Language -eq "English" }</Download>
 		<DisplayName>Adobe Acrobat DC</DisplayName>
 		<Description>Adobe Acrobat Reader DC software is the free, trusted global standard for viewing, printing, signing, sharing, and annotating PDFs. It's the only PDF viewer that can open and interact with all types of PDF content including forms and multimedia.</Description>
 		<Installer>exe</Installer>
 		<Install>Start-Process &lt;Source&gt; &quot;-sfx_nu /sALL /msi EULA_ACCEPT=YES ENABLE_CHROMEEXT=0 DISABLE_BROWSER_INTEGRATION=1 ENABLE_OPTIMIZATION=YES ADD_THUMBNAILPREVIEW=0 DISABLEDESKTOPSHORTCUT=1 UPDATE_MODE=0 DISABLE_ARM_SERVICE_INSTALL=1&quot; -Wait &#xA;New-ItemProperty -LiteralPath "HKLM:\SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown" -Name 'bUpdater' -Value 0 -PropertyType DWord -Force -ea SilentlyContinue</Install>
-		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE '&lt;AppProduct&gt;%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
+		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE '&lt;Name&gt;%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
 		<Path>C:\Program Files\Adobe</Path>
 		<DetectionFolder>Acrobat DC</DetectionFolder>
 		<Enabled>True</Enabled>
@@ -62,6 +65,7 @@
 	<CitrixWorkspaceApp>
 		<Vendor>Citrix Workspace App</Vendor>
 		<Product>CitrixWorkspaceApp</Product>
+		<Name></Name>
 		<Architecture>x86</Architecture>
 		<Download>Get-EvergreenApp -Name CitrixWorkspaceApp | Where-Object { $_.Stream -eq "Current" -and $_.URI -like "*.exe" }</Download>
 		<DisplayName>Citrix Workspace App</DisplayName>
@@ -82,6 +86,7 @@
 	<FileZilla>
 		<Vendor>Tim Kosse</Vendor>
 		<Product>FileZilla</Product>
+		<Name></Name>
 		<Architecture>x86</Architecture>
 		<Download>Get-EvergreenApp -Name FileZilla</Download>
 		<DisplayName>FileZilla FTP Client</DisplayName>
@@ -99,9 +104,50 @@
 			<PilotGroup></PilotGroup>
 		</Assignments>
 	</FileZilla>
+	<FoxitReaderDutch>
+		<Vendor>Foxit Software</Vendor>
+		<Product>FoxitReader_Dutch</Product>
+		<Name>Foxit PDF Reader</Name>
+		<Architecture>x64</Architecture>
+		<Download>Get-EvergreenApp -Name FoxitReader | Where-Object { $_.Language -eq "Dutch" }</Download>
+		<DisplayName>Foxit Reader</DisplayName>
+		<Description>Foxit Reader is een meertalige freemium PDF-tool waarmee u PDF-bestanden kunt maken, bekijken, bewerken, digitaal ondertekenen en afdrukken.</Description>
+		<Installer>msi</Installer>
+		<Install>msiexec /i &lt;Source&gt; ALLUSERS=1 /qn &#xA;Start-Sleep -s 90</Install>
+		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE '&lt;Name&gt;%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
+		<Path>C:\Program Files\Foxit Reader</Path>
+		<Enabled>True</Enabled>
+		<Categories>IT Admin Tools</Categories>
+		<Assignments Customer="">
+			<Group></Group>
+			<RequiredGroup></RequiredGroup>
+			<PilotGroup></PilotGroup>
+		</Assignments>
+	</FoxitReaderDutch>
+	<FoxitReader>
+		<Vendor>Foxit Software</Vendor>
+		<Product>FoxitReader</Product>
+		<Name>Foxit PDF Reader</Name>
+		<Architecture>x64</Architecture>
+		<Download>Get-EvergreenApp -Name FoxitReader | Where-Object { $_.Language -eq "Dutch" }</Download>
+		<DisplayName>Foxit Reader</DisplayName>
+		<Description>Foxit Reader is a multilingual freemium PDF tool that can create, view, edit, digitally sign, and print PDF files.</Description>
+		<Installer>exe</Installer>
+		<Install>/verysilent</Install>
+		<Uninstall></Uninstall>
+		<Path>C:\Program Files\Foxit Reader</Path>
+		<Enabled>False</Enabled>
+		<Categories>IT Admin Tools</Categories>
+		<Assignments Customer="">
+			<Group></Group>
+			<RequiredGroup></RequiredGroup>
+			<PilotGroup></PilotGroup>
+		</Assignments>
+	</FoxitReader>
 	<NotePadPlusPlus>
 		<Vendor>NotepadPlusPlus Team</Vendor>
 		<Product>NotepadPlusPlus</Product>
+		<Name></Name>
 		<Architecture>x64</Architecture>
 		<Download>Get-EvergreenApp -Name NotepadPlusPlus | Where-Object { $_.Architecture -eq "x64" -and $_.URI -like "*.exe" }</Download>
 		<DisplayName>Notepad++</DisplayName>
@@ -121,6 +167,7 @@
 	<MicrosoftNETDesktop>
 		<Vendor>Microsoft.NET</Vendor>
 		<Product>MicrosoftNETDesktop</Product>
+		<Name></Name>
 		<Architecture>x64</Architecture>
 		<Download>Get-EvergreenApp -Name Microsoft.NET | Where-Object { $_.Architecture -eq "x64" -and $_.Channel -eq "Current" -and $_.Installer -like "windowsdesktop" -and $_.URI -like "*.exe" }</Download>
 		<DisplayName>Microsoft Windows Desktop Runtime</DisplayName>
@@ -142,6 +189,7 @@
 	<ZoomWindows>
 		<Vendor>ZoomWindows</Vendor>
 		<Product>ZoomWindows</Product>
+		<Name></Name>
 		<Architecture>x64</Architecture>
 		<Download>Get-EvergreenApp -Name Zoom | Where-Object {$_.Platform -eq "Windows" -and $_.Type -eq "msi"}</Download>
 		<DisplayName>ZoomWindows</DisplayName>
@@ -161,6 +209,7 @@
     <WinSCP>
 		<Vendor>Martin Prikyl</Vendor>
 		<Product>WinSCP</Product>
+		<Name></Name>
 		<Architecture>x86</Architecture>
 		<Download>Get-EvergreenApp -Name WinSCP | Where-Object { $_.Architecture -eq "x86" -and $_.URI -like "*.exe" }</Download>
 		<DisplayName>WinSCP</DisplayName>
@@ -181,6 +230,7 @@
     <GreenShot>
 		<Vendor>GreenShot</Vendor>
 		<Product>GreenShot</Product>
+		<Name></Name>
 		<Architecture>x86</Architecture>
 		<Download>Get-EvergreenApp -Name GreenShot | Where-Object { $_.Architecture -eq "x86" -and $_.URI -like "*RELEASE.exe" }</Download>
 		<DisplayName>GreenShot</DisplayName>
@@ -200,6 +250,7 @@
     <TreeSizeFree>
 		<Vendor>JAM Software</Vendor>
 		<Product>TreeSizeFree</Product>
+		<Name></Name>
 		<Architecture>x86</Architecture>
 		<Download>Get-EvergreenApp -Name JamTreeSizeFree</Download>
 		<DisplayName>TreeSize Free</DisplayName>
@@ -220,6 +271,7 @@
     <MozillaFirefox>
 		<Vendor>Mozilla</Vendor>
 		<Product>Firefox</Product>
+		<Name></Name>
 		<Architecture>x64</Architecture>
 		<Download>Get-EvergreenApp -Name MozillaFirefox | Where-Object { $_.Architecture -eq "x64" -and $_.Channel -eq "LATEST_FIREFOX_VERSION" -and $_.Language -eq "en-US" -and $_.Type -eq "msi" } | Select-Object -First 1</Download>
 		<DisplayName>Mozilla Firefox</DisplayName>
@@ -239,6 +291,7 @@
     <Gimp>
 		<Vendor>The Gimp Team</Vendor>
 		<Product>Gimp</Product>
+		<Name></Name>
 		<Architecture>x86</Architecture>
 		<Download>Get-EvergreenApp -Name Gimp</Download>
 		<DisplayName>Gimp</DisplayName>
@@ -256,28 +309,10 @@
 			<PilotGroup></PilotGroup>
 		</Assignments>
 	</Gimp>
-    <FoxitReader>
-		<Vendor>Foxit Software</Vendor>
-		<Product>FoxitReader</Product>
-		<Architecture>x64</Architecture>
-		<Download>Get-EvergreenApp -Name FoxitReader | Where-Object { $_.Language -eq "Dutch" }</Download>
-		<DisplayName>Foxit Reader</DisplayName>
-		<Description>Foxit Reader is a multilingual freemium PDF tool that can create, view, edit, digitally sign, and print PDF files.</Description>
-		<Installer>exe</Installer>
-		<Install>/verysilent</Install>
-		<Uninstall></Uninstall>
-		<Path>C:\Program Files\Foxit Reader</Path>
-		<Enabled>False</Enabled>
-		<Categories>IT Admin Tools</Categories>
-		<Assignments Customer="">
-			<Group></Group>
-			<RequiredGroup></RequiredGroup>
-			<PilotGroup></PilotGroup>
-		</Assignments>
-	</FoxitReader>
 	<Chrome>
 		<Vendor>Google</Vendor>
 		<Product>Chrome</Product>
+		<Name></Name>
 		<Architecture>x64</Architecture>
 		<Download>Get-EvergreenApp -Name GoogleChrome | Where-Object { $_.Architecture -eq "x64" -and $_.Channel -eq "stable" }</Download>
 		<DisplayName>Google Chrome</DisplayName>
@@ -298,6 +333,7 @@
     <MicrosoftWvdRemoteDesktop>
 		<Vendor>Microsoft</Vendor>
 		<Product>AvDRemoteDesktop</Product>
+		<Name></Name>
 		<Architecture>x64</Architecture>
 		<Download>Get-EvergreenApp -Name MicrosoftWvdRemoteDesktop | Where-Object { $_.Architecture -eq "x64" -and $_.Channel -eq "Public" }</Download>
 		<DisplayName>Microsoft AvD Remote Desktop</DisplayName>
