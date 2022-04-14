@@ -269,10 +269,10 @@
 		<DisplayName>GreenShot</DisplayName>
 		<Description>Greenshot is a free and open-source screenshot program for Microsoft Windows. It is developed by Thomas Braun, Jens Klingen and Robin Krom and is published under GNU General Public License, hosted by GitHub. Greenshot is also available for macOS, but as proprietary software through the App Store.</Description>
 		<Installer>exe</Installer>
-		<Install>/VERYSILENT /SUPPRESSMESSAGEBOXES /CLOSEAPPLICATIONS /RESTARTAPPLICATIONS /NORESTART</Install>
 		<Install>Start-Process &lt;Source&gt; -ArgumentList &quot;/VERYSILENT /SUPPRESSMESSAGEBOXES /CLOSEAPPLICATIONS /RESTARTAPPLICATIONS /NORESTART&quot; &#xA;Start-Sleep -s 8 &#xA;Stop-Process -Name "OpenWith" -ErrorAction SilentlyContinue</Install>
 		<Uninstall>Stop-Process -Name "Greenshot" &#xA;Start-Process &lt;C:\Program Files\Greenshot\unins000.exe&gt; -ArgumentList &quot;/S&quot;</Uninstall>
-		<Path>C:\Program Files\Greenshot</Path>
+		<Path>C:\Program Files</Path>
+		<DetectionFolder>Greenshot</DetectionFolder>
 		<Enabled>True</Enabled>
 		<Logo>GreenShot</Logo>
 		<Categories>IT Admin Tools</Categories>
