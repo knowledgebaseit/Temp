@@ -35,7 +35,7 @@
 		<Path>C:\Program Files\Adobe</Path>
 		<DetectionFolder>Acrobat DC</DetectionFolder>
 		<Enabled>True</Enabled>
-		<Logo></Logo>
+		<Logo>adobe_acrobat_reader_dc</Logo>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group></Group>
@@ -57,7 +57,7 @@
 		<Path>C:\Program Files\Adobe</Path>
 		<DetectionFolder>Acrobat DC</DetectionFolder>
 		<Enabled>True</Enabled>
-		<Logo></Logo>
+		<Logo>adobe_acrobat_reader_dc</Logo>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group></Group>
@@ -79,7 +79,7 @@
 		<Path>C:\Program Files (x86)\Citrix</Path>
 		<DetectionFolder>ICA Client</DetectionFolder>
 		<Enabled>True</Enabled>
-		<Logo></Logo>
+		<Logo>CitrixWorkspaceApp</Logo>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group></Group>
@@ -101,7 +101,7 @@
 		<Path>C:\Program Files</Path>
 		<DetectionFolder>FileZilla FTP Client</DetectionFolder>
 		<Enabled>True</Enabled>
-		<Logo></Logo>
+		<Logo>FileZilla</Logo>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group></Group>
@@ -122,7 +122,7 @@
 		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE '&lt;Name&gt;%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
 		<Path>C:\Program Files\Foxit Reader</Path>
 		<Enabled>True</Enabled>
-		<Logo></Logo>
+		<Logo>foxit_reader</Logo>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group></Group>
@@ -143,7 +143,7 @@
 		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE '&lt;Name&gt;%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
 		<Path>C:\Program Files\Foxit Reader</Path>
 		<Enabled>True</Enabled>
-		<Logo></Logo>
+		<Logo>foxit_reader</Logo>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group></Group>
@@ -165,7 +165,7 @@
 		<Path>C:\Program Files\Google</Path>
 		<DetectionFolder>Chrome</DetectionFolder>
 		<Enabled>True</Enabled>
-		<Logo></Logo>
+		<Logo>Chrome</Logo>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group></Group>
@@ -186,7 +186,7 @@
 		<Uninstall>Start-Process &quot;C:\Program Files\Notepad++\uninstall.exe&quot; -ArgumentList &quot;/S&quot;</Uninstall>
 		<Path>C:\Program Files\Notepad++</Path>
 		<Enabled>True</Enabled>
-		<Logo></Logo>
+		<Logo>NotepadPlusPlus</Logo>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group></Group>
@@ -230,7 +230,7 @@
 		<Uninstall>/x</Uninstall>
 		<Path>C:\Program Files (x86)\Zoom</Path>
 		<Enabled>True</Enabled>
-		<Logo></Logo>
+		<Logo>Zoom</Logo>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group></Group>
@@ -252,7 +252,7 @@
 		<Path>C:\Program Files (x86)\WinSCP</Path>
 		<DetectionFile>WinSCP.exe</DetectionFile>
 		<Enabled>True</Enabled>
-		<Logo></Logo>
+		<Logo>WinSCP</Logo>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group></Group>
@@ -270,10 +270,11 @@
 		<Description>Greenshot is a free and open-source screenshot program for Microsoft Windows. It is developed by Thomas Braun, Jens Klingen and Robin Krom and is published under GNU General Public License, hosted by GitHub. Greenshot is also available for macOS, but as proprietary software through the App Store.</Description>
 		<Installer>exe</Installer>
 		<Install>/VERYSILENT /SUPPRESSMESSAGEBOXES /CLOSEAPPLICATIONS /RESTARTAPPLICATIONS /NORESTART</Install>
-		<Uninstall>unins000.exe</Uninstall>
+		<Install>Start-Process &lt;Source&gt; -ArgumentList &quot;/VERYSILENT /SUPPRESSMESSAGEBOXES /CLOSEAPPLICATIONS /RESTARTAPPLICATIONS /NORESTART&quot; &#xA;Start-Sleep -s 8 &#xA;Stop-Process -Name "OpenWith" -ErrorAction SilentlyContinue</Install>
+		<Uninstall>Stop-Process -Name "Greenshot" &#xA;Start-Process &lt;C:\Program Files\Greenshot\unins000.exe&gt; -ArgumentList &quot;/S&quot;</Uninstall>
 		<Path>C:\Program Files\Greenshot</Path>
 		<Enabled>True</Enabled>
-		<Logo></Logo>
+		<Logo>GreenShot</Logo>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group></Group>
@@ -295,7 +296,7 @@
 		<Path>C:\Program Files (x86)\JAM Software\TreeSize Free</Path>
 		<DetectionFile>TreeSizeFree.exe</DetectionFile>
 		<Enabled>True</Enabled>
-		<Logo></Logo>
+		<Logo>TreeSizeFree</Logo>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group></Group>
@@ -316,7 +317,7 @@
 		<Uninstall>/X</Uninstall>
 		<Path>C:\Program Files\Mozilla Firefox</Path>
 		<Enabled>True</Enabled>
-		<Logo></Logo>
+		<Logo>Mozilla-Firefox</Logo>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group></Group>
@@ -337,7 +338,7 @@
 		<Uninstall>unins000.exe</Uninstall>
 		<Path>C:\Program Files\GIMP 2</Path>
 		<Enabled>True</Enabled>
-		<Logo></Logo>
+		<Logo>Gimp</Logo>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group></Group>
@@ -345,28 +346,6 @@
 			<PilotGroup></PilotGroup>
 		</Assignments>
 	</Gimp>
-	<Chrome>
-		<Vendor>Google</Vendor>
-		<Product>Chrome</Product>
-		<Name></Name>
-		<Architecture>x64</Architecture>
-		<Download>Get-EvergreenApp -Name GoogleChrome | Where-Object { $_.Architecture -eq "x64" -and $_.Channel -eq "stable" }</Download>
-		<DisplayName>Google Chrome</DisplayName>
-		<Description>Google Chrome is a cross-platform web browser developed by Google. It was first released in 2008 for Microsoft Windows, and was later ported to Linux, macOS, iOS, and Android where it is the default browser built into the OS.</Description>
-		<Installer>msi</Installer>
-		<Install>/i ALLUSERS=1 NOGOOGLEUPDATEPING=1 /qn</Install>
-		<Uninstall>/x</Uninstall>
-		<Path>C:\Program Files\Google\Chrome\Application</Path>
-		<DetectionFile>Chrome.exe</DetectionFile>
-		<Enabled>True</Enabled>
-		<Logo></Logo>
-		<Categories>IT Admin Tools</Categories>
-		<Assignments Customer="">
-			<Group></Group>
-			<RequiredGroup></RequiredGroup>
-			<PilotGroup></PilotGroup>
-		</Assignments>
-	</Chrome>
     <MicrosoftWvdRemoteDesktop>
 		<Vendor>Microsoft</Vendor>
 		<Product>AvDRemoteDesktop</Product>
@@ -380,7 +359,7 @@
 		<Uninstall>/x</Uninstall>
 		<Path>C:\Program Files\Remote Desktop</Path>
 		<Enabled>True</Enabled>
-		<Logo></Logo>
+		<Logo>Microsoft-RemoteDesktop</Logo>
 		<Categories>IT Admin Tools</Categories>
 		<Assignments Customer="">
 			<Group></Group>
