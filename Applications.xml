@@ -173,6 +173,50 @@
 			<PilotGroup></PilotGroup>
 		</Assignments>
 	</Chrome>
+	<GreenShot>
+		<Vendor>GreenShot</Vendor>
+		<Product>GreenShot</Product>
+		<Name>GreenShot</Name>
+		<Architecture>x86</Architecture>
+		<Download>Get-EvergreenApp -Name GreenShot | Where-Object { $_.Architecture -eq "x86" -and $_.URI -like "*RELEASE.exe" }</Download>
+		<DisplayName>GreenShot</DisplayName>
+		<Description>Greenshot is a free and open-source screenshot program for Microsoft Windows. It is developed by Thomas Braun, Jens Klingen and Robin Krom and is published under GNU General Public License, hosted by GitHub. Greenshot is also available for macOS, but as proprietary software through the App Store.</Description>
+		<Installer>exe</Installer>
+		<Install>Start-Process &lt;Source&gt; -ArgumentList &quot;/VERYSILENT /SUPPRESSMESSAGEBOXES /CLOSEAPPLICATIONS /RESTARTAPPLICATIONS /NORESTART&quot; &#xA;Start-Sleep -s 8 &#xA;Stop-Process -Name "OpenWith" -ErrorAction SilentlyContinue</Install>
+		<Uninstall>Stop-Process -Name "Greenshot" -Force -ErrorAction SilentlyContinue &#xA;Start-Process "C:\Program Files\Greenshot\unins000.exe" -ArgumentList &quot;/SILENT&quot;</Uninstall>
+		<Path>C:\Program Files</Path>
+		<DetectionFolder>Greenshot</DetectionFolder>
+		<Enabled>True</Enabled>
+		<Logo>GreenShot</Logo>
+		<Categories>IT Admin Tools</Categories>
+		<Assignments Customer="">
+			<Group></Group>
+			<RequiredGroup></RequiredGroup>
+			<PilotGroup></PilotGroup>
+		</Assignments>
+	</GreenShot>
+	<KeePass>
+		<Vendor>KeePass</Vendor>
+		<Product>KeePass</Product>
+		<Name>KeePass</Name>
+		<Architecture>x86</Architecture>
+		<Download>Get-EvergreenApp -Name KeePass | Where-Object { $_.Type -eq "msi" }</Download>
+		<DisplayName>KeePass Password Safe</DisplayName>
+		<Description>KeePass is a free open source password manager, which helps you to manage your passwords in a secure way. You can store all your passwords in one database, which is locked with a master key. So you only have to remember one single master key to unlock the whole database.</Description>
+		<Installer>msi</Installer>
+		<Install>msiexec /i &lt;Source&gt; ALLUSERS=1 /qn</Install>
+		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE '&lt;Name&gt;%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
+		<Path>C:\Program Files\Google</Path>
+		<DetectionFolder>Chrome</DetectionFolder>
+		<Enabled>True</Enabled>
+		<Logo>KeePass</Logo>
+		<Categories>IT Admin Tools</Categories>
+		<Assignments Customer="">
+			<Group></Group>
+			<RequiredGroup></RequiredGroup>
+			<PilotGroup></PilotGroup>
+		</Assignments>
+	</KeePass>
 	<NotePadPlusPlus>
 		<Vendor>NotepadPlusPlus Team</Vendor>
 		<Product>NotepadPlusPlus</Product>
@@ -260,28 +304,6 @@
 			<PilotGroup></PilotGroup>
 		</Assignments>
 	</WinSCP>
-    <GreenShot>
-		<Vendor>GreenShot</Vendor>
-		<Product>GreenShot</Product>
-		<Name>GreenShot</Name>
-		<Architecture>x86</Architecture>
-		<Download>Get-EvergreenApp -Name GreenShot | Where-Object { $_.Architecture -eq "x86" -and $_.URI -like "*RELEASE.exe" }</Download>
-		<DisplayName>GreenShot</DisplayName>
-		<Description>Greenshot is a free and open-source screenshot program for Microsoft Windows. It is developed by Thomas Braun, Jens Klingen and Robin Krom and is published under GNU General Public License, hosted by GitHub. Greenshot is also available for macOS, but as proprietary software through the App Store.</Description>
-		<Installer>exe</Installer>
-		<Install>Start-Process &lt;Source&gt; -ArgumentList &quot;/VERYSILENT /SUPPRESSMESSAGEBOXES /CLOSEAPPLICATIONS /RESTARTAPPLICATIONS /NORESTART&quot; &#xA;Start-Sleep -s 8 &#xA;Stop-Process -Name "OpenWith" -ErrorAction SilentlyContinue</Install>
-		<Uninstall>Stop-Process -Name "Greenshot" &#xA;Start-Process C:\Program Files\Greenshot\unins000.exe -ArgumentList &quot;/S&quot;</Uninstall>
-		<Path>C:\Program Files</Path>
-		<DetectionFolder>Greenshot</DetectionFolder>
-		<Enabled>True</Enabled>
-		<Logo>GreenShot</Logo>
-		<Categories>IT Admin Tools</Categories>
-		<Assignments Customer="">
-			<Group></Group>
-			<RequiredGroup></RequiredGroup>
-			<PilotGroup></PilotGroup>
-		</Assignments>
-	</GreenShot>
     <TreeSizeFree>
 		<Vendor>JAM Software</Vendor>
 		<Product>TreeSizeFree</Product>
