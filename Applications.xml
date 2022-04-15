@@ -160,7 +160,7 @@
 		<DisplayName>Google Chrome</DisplayName>
 		<Description>Google Chrome is a cross-platform web browser developed by Google. It was first released in 2008 for Microsoft Windows, and was later ported to Linux, macOS, iOS, and Android where it is the default browser built into the OS.</Description>
 		<Installer>msi</Installer>
-		<Install>msiexec /i &lt;Source&gt; ALLUSERS=1 NOGOOGLEUPDATEPING=1 /qn</Install>
+		<Install>msiexec /i &lt;Source&gt; ALLUSERS=1 /qn</Install>
 		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE '&lt;Name&gt;%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
 		<Path>C:\Program Files\Google</Path>
 		<DetectionFolder>Chrome</DetectionFolder>
