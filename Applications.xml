@@ -11,15 +11,11 @@
 		<Install>msiexec /i &lt;Source&gt; ALLUSERS=1 /qn</Install>
 		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE '&lt;Name&gt;%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
 		<Path>C:\Program Files\7-Zip</Path>
-		<DetectionFile></DetectionFile>
-		<Enabled>True</Enabled>
+		<DetectionFolder></DetectionFolder>
 		<Logo>7Zip</Logo>
-		<Categories>IT Admin Tools</Categories>
-		<Assignments Customer="">
-			<Group></Group>
-			<RequiredGroup></RequiredGroup>
-			<PilotGroup></PilotGroup>
-		</Assignments>
+		<Categories></Categories>
+		<InstallGroup></InstallGroup>
+		<UninstallGroup></UninstallGroup>
 	</SevenZip>
 	<AdobeAcrobatDCDutch>
 		<Vendor>Adobe Systems</Vendor>
@@ -34,14 +30,10 @@
 		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE '&lt;Name&gt;%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
 		<Path>C:\Program Files\Adobe</Path>
 		<DetectionFolder>Acrobat DC</DetectionFolder>
-		<Enabled>True</Enabled>
 		<Logo>adobe_acrobat_reader_dc</Logo>
-		<Categories>IT Admin Tools</Categories>
-		<Assignments Customer="">
-			<Group></Group>
-			<RequiredGroup></RequiredGroup>
-			<PilotGroup></PilotGroup>
-		</Assignments>
+		<Categories></Categories>
+		<InstallGroup></InstallGroup>
+		<UninstallGroup></UninstallGroup>
 	</AdobeAcrobatDCDutch>
 	<AdobeAcrobatDCEnglish>
 		<Vendor>Adobe Systems</Vendor>
@@ -56,14 +48,10 @@
 		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE '&lt;Name&gt;%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
 		<Path>C:\Program Files\Adobe</Path>
 		<DetectionFolder>Acrobat DC</DetectionFolder>
-		<Enabled>True</Enabled>
 		<Logo>adobe_acrobat_reader_dc</Logo>
-		<Categories>IT Admin Tools</Categories>
-		<Assignments Customer="">
-			<Group></Group>
-			<RequiredGroup></RequiredGroup>
-			<PilotGroup></PilotGroup>
-		</Assignments>
+		<Categories></Categories>
+		<InstallGroup></InstallGroup>
+		<UninstallGroup></UninstallGroup>
 	</AdobeAcrobatDCEnglish>
 	<CitrixWorkspaceApp>
 		<Vendor>Citrix Workspace App</Vendor>
@@ -78,14 +66,10 @@
 		<Uninstall>Start-Process &lt;Source&gt; -ArgumentList &quot;/silent /uninstall&quot; &#xA;Start-Sleep -s 90</Uninstall>
 		<Path>C:\Program Files (x86)\Citrix</Path>
 		<DetectionFolder>ICA Client</DetectionFolder>
-		<Enabled>True</Enabled>
 		<Logo>CitrixWorkspaceApp</Logo>
-		<Categories>IT Admin Tools</Categories>
-		<Assignments Customer="">
-			<Group></Group>
-			<RequiredGroup></RequiredGroup>
-			<PilotGroup></PilotGroup>
-		</Assignments>
+		<Categories></Categories>
+		<InstallGroup></InstallGroup>
+		<UninstallGroup></UninstallGroup>
 	</CitrixWorkspaceApp>
 	<FileZilla>
 		<Vendor>Tim Kosse</Vendor>
@@ -100,14 +84,10 @@
 		<Uninstall>Start-Process "C:\Program Files\FileZilla FTP Client\uninstall.exe"-ArgumentList &quot;/S&quot;</Uninstall>
 		<Path>C:\Program Files</Path>
 		<DetectionFolder>FileZilla FTP Client</DetectionFolder>
-		<Enabled>True</Enabled>
 		<Logo>FileZilla</Logo>
-		<Categories>IT Admin Tools</Categories>
-		<Assignments Customer="">
-			<Group></Group>
-			<RequiredGroup></RequiredGroup>
-			<PilotGroup></PilotGroup>
-		</Assignments>
+		<Categories></Categories>
+		<InstallGroup></InstallGroup>
+		<UninstallGroup></UninstallGroup>
 	</FileZilla>
 	<FoxitReaderDutch>
 		<Vendor>Foxit Software</Vendor>
@@ -121,14 +101,10 @@
 		<Install>msiexec /i &lt;Source&gt; "DESKTOP_SHORTCUT=\"0\" MAKEDEFAULT=\"0\" VIEWINBROWSER=\"0\" LAUNCHCHECKDEFAULT=\"0\" AUTO_UPDATE=\"0\" /passive /norestart /qn" &#xA;Start-Sleep -s 90</Install>
 		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE '&lt;Name&gt;%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
 		<Path>C:\Program Files\Foxit Reader</Path>
-		<Enabled>True</Enabled>
 		<Logo>foxit_reader</Logo>
-		<Categories>IT Admin Tools</Categories>
-		<Assignments Customer="">
-			<Group></Group>
-			<RequiredGroup></RequiredGroup>
-			<PilotGroup></PilotGroup>
-		</Assignments>
+		<Categories></Categories>
+		<InstallGroup></InstallGroup>
+		<UninstallGroup></UninstallGroup>
 	</FoxitReaderDutch>
 	<FoxitReaderEnglish>
 		<Vendor>Foxit Software</Vendor>
@@ -142,14 +118,10 @@
 		<Install>msiexec /i &lt;Source&gt; "DESKTOP_SHORTCUT=\"0\" MAKEDEFAULT=\"0\" VIEWINBROWSER=\"0\" LAUNCHCHECKDEFAULT=\"0\" AUTO_UPDATE=\"0\" /passive /norestart /qn" &#xA;Start-Sleep -s 90</Install>
 		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE '&lt;Name&gt;%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
 		<Path>C:\Program Files\Foxit Reader</Path>
-		<Enabled>True</Enabled>
 		<Logo>foxit_reader</Logo>
-		<Categories>IT Admin Tools</Categories>
-		<Assignments Customer="">
-			<Group></Group>
-			<RequiredGroup></RequiredGroup>
-			<PilotGroup></PilotGroup>
-		</Assignments>
+		<Categories></Categories>
+		<InstallGroup></InstallGroup>
+		<UninstallGroup></UninstallGroup>
 	</FoxitReaderEnglish>
 	<Chrome>
 		<Vendor>Google</Vendor>
@@ -164,14 +136,10 @@
 		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE '&lt;Name&gt;%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
 		<Path>C:\Program Files\Google</Path>
 		<DetectionFolder>Chrome</DetectionFolder>
-		<Enabled>True</Enabled>
 		<Logo>Chrome</Logo>
-		<Categories>IT Admin Tools</Categories>
-		<Assignments Customer="">
-			<Group></Group>
-			<RequiredGroup></RequiredGroup>
-			<PilotGroup></PilotGroup>
-		</Assignments>
+		<Categories></Categories>
+		<InstallGroup></InstallGroup>
+		<UninstallGroup></UninstallGroup>
 	</Chrome>
 	<GreenShot>
 		<Vendor>GreenShot</Vendor>
@@ -186,14 +154,10 @@
 		<Uninstall>Stop-Process -Name "Greenshot" -Force -ErrorAction SilentlyContinue &#xA;Start-Process "C:\Program Files\Greenshot\unins000.exe" -ArgumentList &quot;/SILENT&quot;</Uninstall>
 		<Path>C:\Program Files</Path>
 		<DetectionFolder>Greenshot</DetectionFolder>
-		<Enabled>True</Enabled>
 		<Logo>GreenShot</Logo>
-		<Categories>IT Admin Tools</Categories>
-		<Assignments Customer="">
-			<Group></Group>
-			<RequiredGroup></RequiredGroup>
-			<PilotGroup></PilotGroup>
-		</Assignments>
+		<Categories></Categories>
+		<InstallGroup></InstallGroup>
+		<UninstallGroup></UninstallGroup>
 	</GreenShot>
 	<KeePass>
 		<Vendor>KeePass</Vendor>
@@ -204,18 +168,14 @@
 		<DisplayName>KeePass Password Safe</DisplayName>
 		<Description>KeePass is a free open source password manager, which helps you to manage your passwords in a secure way. You can store all your passwords in one database, which is locked with a master key. So you only have to remember one single master key to unlock the whole database.</Description>
 		<Installer>msi</Installer>
-		<Install>msiexec /i &lt;Source&gt; ALLUSERS=1 /qn</Install>
+		<Install>Enable-WindowsOptionalFeature -FeatureName "NetFx3" -Online -NoRestart &#xA;msiexec /i &lt;Source&gt; ALLUSERS=1 /qn &#xA;$appName = 'KeePass' &#xA;$drive = 'C:\Temp' &#xA;$LocalPath = $drive + '\' + $appName &#xA;Remove-Item -Path $LocalPath -Recurse -ErrorAction SilentlyContinue &#xA;New-Item -Path $drive -Name $appName -ItemType Directory -ErrorAction SilentlyContinue &#xA;set-Location $LocalPath &#xA;$SetupURL = 'https://raw.githubusercontent.com/knowledgebaseit/Temp/main/KeePass_Dutch.zip' &#xA;$setupzip = 'KeePass_Dutch.zip' &#xA;$ProgressPreference = 'SilentlyContinue' &#xA;Invoke-WebRequest -Uri $SetupURL -OutFile $setupzip &#xA;Expand-Archive $LocalPath\KeePass_Dutch.zip -DestinationPath "$Localpath" -Force -Verbose &#xA;Copy-Item 'C:\Temp\KeePass\Dutch.lngx' 'C:\Program Files (x86)\KeePass2x\Languages' -Recurse -Force &#xA;Copy-Item 'C:\Temp\KeePass\KeePass.config.enforced.xml' 'C:\Program Files (x86)\KeePass2x' -Recurse -Force &#xA;</Install>
 		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE '&lt;Name&gt;%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
 		<Path>C:\Program Files\Google</Path>
-		<DetectionFolder>Chrome</DetectionFolder>
-		<Enabled>True</Enabled>
+		<DetectionFolder></DetectionFolder>
 		<Logo>KeePass</Logo>
-		<Categories>IT Admin Tools</Categories>
-		<Assignments Customer="">
-			<Group></Group>
-			<RequiredGroup></RequiredGroup>
-			<PilotGroup></PilotGroup>
-		</Assignments>
+		<Categories></Categories>
+		<InstallGroup></InstallGroup>
+		<UninstallGroup></UninstallGroup>
 	</KeePass>
 	<NotePadPlusPlus>
 		<Vendor>NotepadPlusPlus Team</Vendor>
@@ -229,14 +189,10 @@
 		<Install>Start-Process &lt;Source&gt; -ArgumentList &quot;/S&quot;</Install>
 		<Uninstall>Start-Process &quot;C:\Program Files\Notepad++\uninstall.exe&quot; -ArgumentList &quot;/S&quot;</Uninstall>
 		<Path>C:\Program Files\Notepad++</Path>
-		<Enabled>True</Enabled>
 		<Logo>NotepadPlusPlus</Logo>
-		<Categories>IT Admin Tools</Categories>
-		<Assignments Customer="">
-			<Group></Group>
-			<RequiredGroup></RequiredGroup>
-			<PilotGroup></PilotGroup>
-		</Assignments>
+		<Categories></Categories>
+		<InstallGroup></InstallGroup>
+		<UninstallGroup></UninstallGroup>
 	</NotePadPlusPlus>
 	<MicrosoftNETDesktop>
 		<Vendor>Microsoft.NET</Vendor>
@@ -250,16 +206,11 @@
 		<Install>/S</Install>
 		<Uninstall></Uninstall>
 		<Path>C:\ProgramData\Package Cache\{1e198010-5aa4-4fa4-b886-a31eb45f4661}</Path>
-		<DetectionPath>WinSCP.exe</DetectionPath>
-		<DetectionFile>WinSCP.exe</DetectionFile>
-		<Enabled>True</Enabled>
+		<DetectionFolder></DetectionFolder>
 		<Logo></Logo>
-		<Categories>IT Admin Tools</Categories>
-		<Assignments Customer="">
-			<Group></Group>
-			<RequiredGroup></RequiredGroup>
-			<PilotGroup></PilotGroup>
-		</Assignments>
+		<Categories></Categories>
+		<InstallGroup></InstallGroup>
+		<UninstallGroup></UninstallGroup>
 	</MicrosoftNETDesktop>
 	<ZoomWindows>
 		<Vendor>ZoomWindows</Vendor>
@@ -273,14 +224,11 @@
 		<Install>/qn</Install>
 		<Uninstall>/x</Uninstall>
 		<Path>C:\Program Files (x86)\Zoom</Path>
-		<Enabled>True</Enabled>
+
 		<Logo>Zoom</Logo>
-		<Categories>IT Admin Tools</Categories>
-		<Assignments Customer="">
-			<Group></Group>
-			<RequiredGroup></RequiredGroup>
-			<PilotGroup></PilotGroup>
-		</Assignments>
+		<Categories></Categories>
+		<InstallGroup></InstallGroup>
+		<UninstallGroup></UninstallGroup>
 	</ZoomWindows>
     <WinSCP>
 		<Vendor>Martin Prikyl</Vendor>
@@ -295,14 +243,11 @@
 		<Uninstall>unins000.exe /VERYSILENT /SUPPRESSMSGBOXES /NORESTART</Uninstall>
 		<Path>C:\Program Files (x86)\WinSCP</Path>
 		<DetectionFile>WinSCP.exe</DetectionFile>
-		<Enabled>True</Enabled>
+
 		<Logo>WinSCP</Logo>
-		<Categories>IT Admin Tools</Categories>
-		<Assignments Customer="">
-			<Group></Group>
-			<RequiredGroup></RequiredGroup>
-			<PilotGroup></PilotGroup>
-		</Assignments>
+		<Categories></Categories>
+		<InstallGroup></InstallGroup>
+		<UninstallGroup></UninstallGroup>
 	</WinSCP>
     <TreeSizeFree>
 		<Vendor>JAM Software</Vendor>
@@ -317,14 +262,11 @@
 		<Uninstall>unins000.exe</Uninstall>
 		<Path>C:\Program Files (x86)\JAM Software\TreeSize Free</Path>
 		<DetectionFile>TreeSizeFree.exe</DetectionFile>
-		<Enabled>True</Enabled>
+
 		<Logo>TreeSizeFree</Logo>
-		<Categories>IT Admin Tools</Categories>
-		<Assignments Customer="">
-			<Group></Group>
-			<RequiredGroup></RequiredGroup>
-			<PilotGroup></PilotGroup>
-		</Assignments>
+		<Categories></Categories>
+		<InstallGroup></InstallGroup>
+		<UninstallGroup></UninstallGroup>
 	</TreeSizeFree>
     <MozillaFirefox>
 		<Vendor>Mozilla</Vendor>
@@ -338,14 +280,11 @@
 		<Install>/i ALLUSERS=1 /qn</Install>
 		<Uninstall>/X</Uninstall>
 		<Path>C:\Program Files\Mozilla Firefox</Path>
-		<Enabled>True</Enabled>
+
 		<Logo>Mozilla-Firefox</Logo>
-		<Categories>IT Admin Tools</Categories>
-		<Assignments Customer="">
-			<Group></Group>
-			<RequiredGroup></RequiredGroup>
-			<PilotGroup></PilotGroup>
-		</Assignments>
+		<Categories></Categories>
+		<InstallGroup></InstallGroup>
+		<UninstallGroup></UninstallGroup>
 	</MozillaFirefox>
     <Gimp>
 		<Vendor>The Gimp Team</Vendor>
@@ -359,14 +298,11 @@
 		<Install>/VERYSILENT /NORESTART /RESTARTEXITCODE=3010 /SUPPRESSMSGBOXES /SP-</Install>
 		<Uninstall>unins000.exe</Uninstall>
 		<Path>C:\Program Files\GIMP 2</Path>
-		<Enabled>True</Enabled>
+
 		<Logo>Gimp</Logo>
-		<Categories>IT Admin Tools</Categories>
-		<Assignments Customer="">
-			<Group></Group>
-			<RequiredGroup></RequiredGroup>
-			<PilotGroup></PilotGroup>
-		</Assignments>
+		<Categories></Categories>
+		<InstallGroup></InstallGroup>
+		<UninstallGroup></UninstallGroup>
 	</Gimp>
     <MicrosoftWvdRemoteDesktop>
 		<Vendor>Microsoft</Vendor>
@@ -380,13 +316,10 @@
 		<Install>ALLUSERS=1 REBOOT=ReallySuppress /norestart /qn /L*V</Install>
 		<Uninstall>/x</Uninstall>
 		<Path>C:\Program Files\Remote Desktop</Path>
-		<Enabled>True</Enabled>
+
 		<Logo>Microsoft-RemoteDesktop</Logo>
-		<Categories>IT Admin Tools</Categories>
-		<Assignments Customer="">
-			<Group></Group>
-			<RequiredGroup></RequiredGroup>
-			<PilotGroup></PilotGroup>
-		</Assignments>
+		<Categories></Categories>
+		<InstallGroup></InstallGroup>
+		<UninstallGroup></UninstallGroup>
 	</MicrosoftWvdRemoteDesktop>   
 </Applications>
