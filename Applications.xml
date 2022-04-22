@@ -212,12 +212,30 @@
 		<InstallGroup></InstallGroup>
 		<UninstallGroup></UninstallGroup>
 	</MicrosoftNETDesktop>
+	<MicrosoftEdge>
+		<Vendor>MicrosoftEdge</Vendor>
+		<Product>MicrosoftEdge</Product>
+		<Name>Microsoft Edge</Name>
+		<Architecture>x64</Architecture>
+		<Download>Get-EvergreenApp -Name MicrosoftEdge | Where-Object { $_.Architecture -eq "x64" -and $_.Channel -eq "Stable" -and $_.Release -eq "Consumer"}</Download>
+		<DisplayName>MicrosoftEdge</DisplayName>
+		<Description>Microsoft Edge is the best browser for Windows. Sync your passwords, favorites, and settings across multiple devices and start using Microsoft Edge today.</Description>
+		<Installer>msi</Installer>
+		<Install>Start-Process &lt;Source&gt; -ArgumentList &quot;/S&quot;</Install>
+		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE '&lt;Name&gt;%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
+		<Path>C:\Program Files (x86)\Microsoft\Edge</Path>
+		<DetectionFolder>Application</DetectionFolder>
+		<Logo>MicrosoftEdge</Logo>
+		<Categories></Categories>
+		<InstallGroup></InstallGroup>
+		<UninstallGroup></UninstallGroup>
+	</MicrosoftEdge>
 	<ZoomWindows>
 		<Vendor>ZoomWindows</Vendor>
 		<Product>ZoomWindows</Product>
 		<Name></Name>
 		<Architecture>x64</Architecture>
-		<Download>Get-EvergreenApp -Name Zoom | Where-Object {$_.Platform -eq "Windows" -and $_.Type -eq "msi"}</Download>
+		<Download>Get-EvergreenApp -Name Zoom | Where-Object { $_.Architecture -eq "x64" -and $_.Channel -eq "Stable" -and $_.Release -eq "Enterprise"}</Download>
 		<DisplayName>ZoomWindows</DisplayName>
 		<Description>Zoom is a cloud-based video communications app that allows you to set up virtual video and audio conferencing, webinars, live chats, screen-sharing, and other collaborative capabilities.</Description>
 		<Installer>msi</Installer>
