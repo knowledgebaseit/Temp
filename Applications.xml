@@ -204,7 +204,7 @@
 		<Description>The .NET Desktop SDK, which includes Windows Forms (WinForms) and Windows Presentation Foundation (WPF)</Description>
 		<Installer>exe</Installer>
 		<Install>Start-Process &lt;Source&gt; -ArgumentList &quot;/S&quot;</Install>
-		<Uninstall>Start-Process &lt;Source&gt; -ArgumentList &quot;/S&quot;</Uninstall>
+		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE '&lt;Name&gt;%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
 		<Path>C:\Program Files\dotnet</Path>
 		<DetectionFolder>swidtag</DetectionFolder>
 		<Logo></Logo>
