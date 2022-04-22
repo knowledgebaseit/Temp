@@ -214,14 +214,14 @@
 	</MicrosoftNETDesktop>
 	<MicrosoftEdge>
 		<Vendor>MicrosoftEdge</Vendor>
-		<Product>MicrosoftEdge</Product>
+		<Product>MicrosoftEdge_Dutch</Product>
 		<Name>Microsoft Edge</Name>
 		<Architecture>x64</Architecture>
 		<Download>Get-EvergreenApp -Name MicrosoftEdge | Where-Object { $_.Architecture -eq "x64" -and $_.Channel -eq "Stable" -and $_.Release -eq "Consumer"}</Download>
 		<DisplayName>MicrosoftEdge</DisplayName>
 		<Description>Microsoft Edge is the best browser for Windows. Sync your passwords, favorites, and settings across multiple devices and start using Microsoft Edge today.</Description>
 		<Installer>msi</Installer>
-		<Install>Start-Process &lt;Source&gt; -ArgumentList &quot;/S&quot;</Install>
+		<Install>Start-Process &lt;Source&gt; -ArgumentList &quot;/S&quot; &#xA;New-Item -Path 'HKLM:\Software\Policies\Microsoft\Edge' -Force | Out-Null &#xA;New-Item -Path 'HKLM:\Software\Policies\Microsoft\Edge\SpellCheckLanguage' -Force | Out-Null &#xA;New-ItemProperty -Path 'HKLM:\Software\Policies\Microsoft\Edge' -Name 'ApplicationLocaleValue ' -Value 'nl' -PropertyType String -Force | Out-Null &#xA;New-ItemProperty -Path 'HKLM:\Software\Policies\Microsoft\Edge\SpellCheckLanguage' -Name '1 ' -Value 'nl' -PropertyType String -Force | Out-Null</Install>
 		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE '&lt;Name&gt;%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
 		<Path>C:\Program Files (x86)\Microsoft\Edge</Path>
 		<DetectionFolder>Application</DetectionFolder>
