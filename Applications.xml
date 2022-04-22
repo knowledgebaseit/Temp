@@ -159,9 +159,9 @@
 		<InstallGroup></InstallGroup>
 		<UninstallGroup></UninstallGroup>
 	</GreenShot>
-	<KeePass>
+	<KeePass_Dutch>
 		<Vendor>KeePass</Vendor>
-		<Product>KeePass</Product>
+		<Product>KeePass_Dutch</Product>
 		<Name>KeePass</Name>
 		<Architecture>x86</Architecture>
 		<Download>Get-EvergreenApp -Name KeePass | Where-Object { $_.Type -eq "msi" }</Download>
@@ -176,7 +176,7 @@
 		<Categories></Categories>
 		<InstallGroup></InstallGroup>
 		<UninstallGroup></UninstallGroup>
-	</KeePass>
+	</KeePass_Dutch>
 	<NotePadPlusPlus>
 		<Vendor>NotepadPlusPlus Team</Vendor>
 		<Product>NotepadPlusPlus</Product>
@@ -203,10 +203,10 @@
 		<DisplayName>Microsoft Windows Desktop Runtime</DisplayName>
 		<Description>The .NET Desktop SDK, which includes Windows Forms (WinForms) and Windows Presentation Foundation (WPF)</Description>
 		<Installer>exe</Installer>
-		<Install>/S</Install>
-		<Uninstall></Uninstall>
-		<Path>C:\ProgramData\Package Cache\{1e198010-5aa4-4fa4-b886-a31eb45f4661}</Path>
-		<DetectionFolder></DetectionFolder>
+		<Install>Start-Process &lt;Source&gt; -ArgumentList &quot;/S&quot;</Install>
+		<Uninstall>Start-Process &lt;Source&gt; -ArgumentList &quot;/S&quot;</Uninstall>
+		<Path>C:\Program Files\dotnet</Path>
+		<DetectionFolder>swidtag</DetectionFolder>
 		<Logo></Logo>
 		<Categories></Categories>
 		<InstallGroup></InstallGroup>
@@ -224,7 +224,6 @@
 		<Install>/qn</Install>
 		<Uninstall>/x</Uninstall>
 		<Path>C:\Program Files (x86)\Zoom</Path>
-
 		<Logo>Zoom</Logo>
 		<Categories></Categories>
 		<InstallGroup></InstallGroup>
@@ -243,7 +242,6 @@
 		<Uninstall>unins000.exe /VERYSILENT /SUPPRESSMSGBOXES /NORESTART</Uninstall>
 		<Path>C:\Program Files (x86)\WinSCP</Path>
 		<DetectionFile>WinSCP.exe</DetectionFile>
-
 		<Logo>WinSCP</Logo>
 		<Categories></Categories>
 		<InstallGroup></InstallGroup>
@@ -262,7 +260,6 @@
 		<Uninstall>unins000.exe</Uninstall>
 		<Path>C:\Program Files (x86)\JAM Software\TreeSize Free</Path>
 		<DetectionFile>TreeSizeFree.exe</DetectionFile>
-
 		<Logo>TreeSizeFree</Logo>
 		<Categories></Categories>
 		<InstallGroup></InstallGroup>
@@ -280,7 +277,6 @@
 		<Install>/i ALLUSERS=1 /qn</Install>
 		<Uninstall>/X</Uninstall>
 		<Path>C:\Program Files\Mozilla Firefox</Path>
-
 		<Logo>Mozilla-Firefox</Logo>
 		<Categories></Categories>
 		<InstallGroup></InstallGroup>
@@ -298,7 +294,6 @@
 		<Install>/VERYSILENT /NORESTART /RESTARTEXITCODE=3010 /SUPPRESSMSGBOXES /SP-</Install>
 		<Uninstall>unins000.exe</Uninstall>
 		<Path>C:\Program Files\GIMP 2</Path>
-
 		<Logo>Gimp</Logo>
 		<Categories></Categories>
 		<InstallGroup></InstallGroup>
@@ -316,7 +311,6 @@
 		<Install>ALLUSERS=1 REBOOT=ReallySuppress /norestart /qn /L*V</Install>
 		<Uninstall>/x</Uninstall>
 		<Path>C:\Program Files\Remote Desktop</Path>
-
 		<Logo>Microsoft-RemoteDesktop</Logo>
 		<Categories></Categories>
 		<InstallGroup></InstallGroup>
