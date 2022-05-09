@@ -212,7 +212,7 @@
 		<InstallGroup></InstallGroup>
 		<UninstallGroup></UninstallGroup>
 	</MicrosoftNETDesktop>
-	<MicrosoftEdge>
+	<MicrosoftEdge_Dutch>
 		<Vendor>MicrosoftEdge</Vendor>
 		<Product>MicrosoftEdge_Dutch</Product>
 		<Name>Microsoft Edge</Name>
@@ -229,7 +229,7 @@
 		<Categories></Categories>
 		<InstallGroup></InstallGroup>
 		<UninstallGroup></UninstallGroup>
-	</MicrosoftEdge>
+	</MicrosoftEdge_Dutch>
 	<ZoomWindows>
 		<Vendor>ZoomWindows</Vendor>
 		<Product>ZoomWindows</Product>
@@ -247,7 +247,7 @@
 		<InstallGroup></InstallGroup>
 		<UninstallGroup></UninstallGroup>
 	</ZoomWindows>
-    <WinSCP>
+	<WinSCP>
 		<Vendor>Martin Prikyl</Vendor>
 		<Product>WinSCP</Product>
 		<Name></Name>
@@ -265,7 +265,7 @@
 		<InstallGroup></InstallGroup>
 		<UninstallGroup></UninstallGroup>
 	</WinSCP>
-    <TreeSizeFree>
+	<TreeSizeFree>
 		<Vendor>JAM Software</Vendor>
 		<Product>TreeSizeFree</Product>
 		<Name></Name>
@@ -283,7 +283,7 @@
 		<InstallGroup></InstallGroup>
 		<UninstallGroup></UninstallGroup>
 	</TreeSizeFree>
-    <MozillaFirefox>
+	<MozillaFirefox>
 		<Vendor>Mozilla</Vendor>
 		<Product>Firefox</Product>
 		<Name></Name>
@@ -300,7 +300,7 @@
 		<InstallGroup></InstallGroup>
 		<UninstallGroup></UninstallGroup>
 	</MozillaFirefox>
-    <Gimp>
+	<Gimp>
 		<Vendor>The Gimp Team</Vendor>
 		<Product>Gimp</Product>
 		<Name></Name>
@@ -317,7 +317,7 @@
 		<InstallGroup></InstallGroup>
 		<UninstallGroup></UninstallGroup>
 	</Gimp>
-    <MicrosoftWvdRemoteDesktop>
+	<MicrosoftWvdRemoteDesktop>
 		<Vendor>Microsoft</Vendor>
 		<Product>AvDRemoteDesktop</Product>
 		<Name></Name>
