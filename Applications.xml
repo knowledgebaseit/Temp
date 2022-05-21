@@ -4,7 +4,7 @@
 		<Product>7Zip</Product>
 		<Name>7-Zip</Name>
 		<Architecture>x64</Architecture>
-		<Download>Get-EvergreenApp -Name 7zip | Where-Object { $_.Architecture -eq "x64" -and $_.URI -like "*.msi" }</Download>
+		<Download>$Download = Get-EvergreenApp -Name 7zip | Where-Object { $_.Architecture -eq "x64" -and $_.URI -like "*.msi" } &#xA;$URL = $Download.uri &#xA;Invoke-WebRequest -UseBasicParsing -Uri $url -OutFile $Source </Download>
 		<DisplayName>7-Zip</DisplayName>
 		<Description>7-Zip is a free and open-source file archiver, a utility used to place groups of files within compressed containers known as "archives". It is developed by Igor Pavlov and was first released in 1999. 7-Zip uses its own 7z archive format, but can read and write several other archive formats.</Description>
 		<Installer>msi</Installer>
@@ -213,7 +213,7 @@
 		<UninstallGroup></UninstallGroup>
 	</MicrosoftNETDesktop>
 	<MicrosoftEdge_Dutch>
-		<Vendor>MicrosoftEdge</Vendor>
+		<Vendor>MicrosoftEdge_Dutch</Vendor>
 		<Product>MicrosoftEdge_Dutch</Product>
 		<Name>Microsoft Edge</Name>
 		<Architecture>x64</Architecture>
@@ -230,6 +230,24 @@
 		<InstallGroup></InstallGroup>
 		<UninstallGroup></UninstallGroup>
 	</MicrosoftEdge_Dutch>
+	<MicrosoftFSLogixApps>
+		<Vendor>MicrosoftFSLogixApps</Vendor>
+		<Product>MicrosoftFSLogixApps</Product>
+		<Name>Microsoft Edge</Name>
+		<Architecture>x64</Architecture>
+		<Download>Get-EvergreenApp -Name MicrosoftFSLogixApps | Where-Object { $_.Channel -eq "Production" }</Download>
+		<DisplayName>MicrosoftFSLogixApps</DisplayName>
+		<Description>Microsoft Edge is the best browser for Windows. Sync your passwords, favorites, and settings across multiple devices and start using Microsoft Edge today.</Description>
+		<Installer>msi</Installer>
+		<Install>Start-Process &lt;Source&gt; -ArgumentList &quot;/S&quot; &#xA;New-Item -Path 'HKLM:\Software\Policies\Microsoft\Edge' -Force | Out-Null &#xA;New-Item -Path 'HKLM:\Software\Policies\Microsoft\Edge\SpellCheckLanguage' -Force | Out-Null &#xA;New-ItemProperty -Path 'HKLM:\Software\Policies\Microsoft\Edge' -Name 'ApplicationLocaleValue ' -Value 'nl' -PropertyType String -Force | Out-Null &#xA;New-ItemProperty -Path 'HKLM:\Software\Policies\Microsoft\Edge\SpellCheckLanguage' -Name '1 ' -Value 'nl' -PropertyType String -Force | Out-Null</Install>
+		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE '&lt;Name&gt;%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
+		<Path>C:\Program Files (x86)\Microsoft\Edge</Path>
+		<DetectionFolder>Application</DetectionFolder>
+		<Logo>MicrosoftFSLogixApps</Logo>
+		<Categories></Categories>
+		<InstallGroup></InstallGroup>
+		<UninstallGroup></UninstallGroup>
+	</MicrosoftFSLogixApps>
 	<ZoomWindows>
 		<Vendor>ZoomWindows</Vendor>
 		<Product>ZoomWindows</Product>
