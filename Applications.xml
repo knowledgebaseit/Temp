@@ -16,6 +16,23 @@
 		<Categories></Categories>
 		<InstallGroup></InstallGroup>
 		<UninstallGroup></UninstallGroup>
+	<FoxitReaderDutch>
+		<Vendor>Foxit Software</Vendor>
+		<Product>FoxitReader_Dutch</Product>
+		<Name>Foxit PDF Reader</Name>
+		<Architecture>x64</Architecture>
+		<Download>Get-EvergreenApp -Name FoxitReader | Where-Object { $_.Language -eq "Dutch" }</Download>
+		<DisplayName>Foxit Reader</DisplayName>
+		<Description>Foxit Reader is een meertalige freemium PDF-tool waarmee u PDF-bestanden kunt maken, bekijken, bewerken, digitaal ondertekenen en afdrukken.</Description>
+		<Installer>msi</Installer>
+		<Install>msiexec /i &lt;Source&gt; "DESKTOP_SHORTCUT=\"0\" MAKEDEFAULT=\"0\" VIEWINBROWSER=\"0\" LAUNCHCHECKDEFAULT=\"0\" AUTO_UPDATE=\"0\" /passive /norestart /qn" &#xA;Start-Sleep -s 90</Install>
+		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE '&lt;Name&gt;%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
+		<Path>C:\Program Files\Foxit Reader</Path>
+		<Logo>foxit_reader</Logo>
+		<Categories></Categories>
+		<InstallGroup></InstallGroup>
+		<UninstallGroup></UninstallGroup>
+	</FoxitReaderDutch>
 	</SevenZip>
 	<AdobeAcrobatDCDutch>
 		<Vendor>Adobe Systems</Vendor>
@@ -89,23 +106,6 @@
 		<InstallGroup></InstallGroup>
 		<UninstallGroup></UninstallGroup>
 	</FileZilla>
-	<FoxitReaderDutch>
-		<Vendor>Foxit Software</Vendor>
-		<Product>FoxitReader_Dutch</Product>
-		<Name>Foxit PDF Reader</Name>
-		<Architecture>x64</Architecture>
-		<Download>Get-EvergreenApp -Name FoxitReader | Where-Object { $_.Language -eq "Dutch" }</Download>
-		<DisplayName>Foxit Reader</DisplayName>
-		<Description>Foxit Reader is een meertalige freemium PDF-tool waarmee u PDF-bestanden kunt maken, bekijken, bewerken, digitaal ondertekenen en afdrukken.</Description>
-		<Installer>msi</Installer>
-		<Install>msiexec /i &lt;Source&gt; "DESKTOP_SHORTCUT=\"0\" MAKEDEFAULT=\"0\" VIEWINBROWSER=\"0\" LAUNCHCHECKDEFAULT=\"0\" AUTO_UPDATE=\"0\" /passive /norestart /qn" &#xA;Start-Sleep -s 90</Install>
-		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE '&lt;Name&gt;%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
-		<Path>C:\Program Files\Foxit Reader</Path>
-		<Logo>foxit_reader</Logo>
-		<Categories></Categories>
-		<InstallGroup></InstallGroup>
-		<UninstallGroup></UninstallGroup>
-	</FoxitReaderDutch>
 	<FoxitReaderEnglish>
 		<Vendor>Foxit Software</Vendor>
 		<Product>FoxitReader_English</Product>
