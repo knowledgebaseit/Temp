@@ -16,6 +16,7 @@
 		<Categories></Categories>
 		<InstallGroup></InstallGroup>
 		<UninstallGroup></UninstallGroup>
+	</SevenZip>
 	<FoxitReaderDutch>
 		<Vendor>Foxit Software</Vendor>
 		<Product>FoxitReader_Dutch</Product>
@@ -33,7 +34,6 @@
 		<InstallGroup></InstallGroup>
 		<UninstallGroup></UninstallGroup>
 	</FoxitReaderDutch>
-	</SevenZip>
 	<AdobeAcrobatDCDutch>
 		<Vendor>Adobe Systems</Vendor>
 		<Product>AdobeAcrobatDC_Dutch</Product>
