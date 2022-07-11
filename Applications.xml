@@ -10,12 +10,7 @@
 		<Installer>msi</Installer>
 		<Install>msiexec /i &lt;Source&gt; ALLUSERS=1 /qn</Install>
 		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE '&lt;Name&gt;%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
-		<Path>C:\Program Files\7-Zip</Path>
-		<DetectionFolder></DetectionFolder>
 		<Logo>7Zip</Logo>
-		<Categories></Categories>
-		<InstallGroup></InstallGroup>
-		<UninstallGroup></UninstallGroup>
 	</SevenZip>
 	<FoxitReaderDutch>
 		<Vendor>Foxit Software</Vendor>
@@ -28,11 +23,7 @@
 		<Installer>msi</Installer>
 		<Install>msiexec /i &lt;Source&gt; "DESKTOP_SHORTCUT=\"0\" MAKEDEFAULT=\"0\" VIEWINBROWSER=\"0\" LAUNCHCHECKDEFAULT=\"0\" AUTO_UPDATE=\"0\" /passive /norestart /qn" &#xA;Start-Sleep -s 90</Install>
 		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE '&lt;Name&gt;%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
-		<Path>C:\Program Files\Foxit Reader</Path>
 		<Logo>foxit_reader</Logo>
-		<Categories></Categories>
-		<InstallGroup></InstallGroup>
-		<UninstallGroup></UninstallGroup>
 	</FoxitReaderDutch>
 	<AdobeAcrobatDCDutch>
 		<Vendor>Adobe Systems</Vendor>
