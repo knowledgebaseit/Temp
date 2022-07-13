@@ -21,10 +21,27 @@
 		<DisplayName>Foxit Reader</DisplayName>
 		<Description>Foxit Reader is een meertalige freemium PDF-tool waarmee u PDF-bestanden kunt maken, bekijken, bewerken, digitaal ondertekenen en afdrukken.</Description>
 		<Installer>msi</Installer>
-		<Install>msiexec /i &lt;Source&gt; "DESKTOP_SHORTCUT=\"0\" MAKEDEFAULT=\"0\" VIEWINBROWSER=\"0\" LAUNCHCHECKDEFAULT=\"0\" AUTO_UPDATE=\"0\" /passive /norestart /qn" &#xA;Start-Sleep -s 90</Install>
+		<Install>msiexec /i &lt;Source&gt; ALLUSERS=1 DESKTOP_SHORTCUT=0 MAKEDEFAULT=0 VIEWINBROWSER=0 LAUNCHCHECKDEFAULT=0 AUTO_UPDATE=0 /passive /norestart /qn &#xA;Start-Sleep -s 90</Install>
 		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE '&lt;Name&gt;%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
 		<Logo>foxit_reader</Logo>
 	</FoxitReaderDutch>
+		<FoxitReaderEnglish>
+		<Vendor>Foxit Software</Vendor>
+		<Product>FoxitReader_English</Product>
+		<Name>Foxit PDF Reader</Name>
+		<Architecture>x64</Architecture>
+		<Download>Get-EvergreenApp -Name FoxitReader | Where-Object { $_.Language -eq "English" }</Download>
+		<DisplayName>Foxit Reader</DisplayName>
+		<Description>Foxit Reader is een meertalige freemium PDF-tool waarmee u PDF-bestanden kunt maken, bekijken, bewerken, digitaal ondertekenen en afdrukken.</Description>
+		<Installer>msi</Installer>
+		<Install>msiexec /i &lt;Source&gt; ALLUSERS=1 DESKTOP_SHORTCUT=0 MAKEDEFAULT=0 VIEWINBROWSER=0 LAUNCHCHECKDEFAULT=0 AUTO_UPDATE=0 /passive /norestart /qn &#xA;Start-Sleep -s 90</Install>
+		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE '&lt;Name&gt;%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
+		<Path>C:\Program Files\Foxit Reader</Path>
+		<Logo>foxit_reader</Logo>
+		<Categories></Categories>
+		<InstallGroup></InstallGroup>
+		<UninstallGroup></UninstallGroup>
+	</FoxitReaderEnglish>
 	<AdobeAcrobatDCDutch>
 		<Vendor>Adobe Systems</Vendor>
 		<Product>AdobeAcrobatDC_Dutch</Product>
@@ -97,23 +114,6 @@
 		<InstallGroup></InstallGroup>
 		<UninstallGroup></UninstallGroup>
 	</FileZilla>
-	<FoxitReaderEnglish>
-		<Vendor>Foxit Software</Vendor>
-		<Product>FoxitReader_English</Product>
-		<Name>Foxit PDF Reader</Name>
-		<Architecture>x64</Architecture>
-		<Download>Get-EvergreenApp -Name FoxitReader | Where-Object { $_.Language -eq "English" }</Download>
-		<DisplayName>Foxit Reader</DisplayName>
-		<Description>Foxit Reader is een meertalige freemium PDF-tool waarmee u PDF-bestanden kunt maken, bekijken, bewerken, digitaal ondertekenen en afdrukken.</Description>
-		<Installer>msi</Installer>
-		<Install>msiexec /i &lt;Source&gt; "DESKTOP_SHORTCUT=\"0\" MAKEDEFAULT=\"0\" VIEWINBROWSER=\"0\" LAUNCHCHECKDEFAULT=\"0\" AUTO_UPDATE=\"0\" /passive /norestart /qn" &#xA;Start-Sleep -s 90</Install>
-		<Uninstall>$IdentifyingNumber = Get-WmiObject Win32_Product -filter "Name LIKE '&lt;Name&gt;%'" | Select-Object -ExpandProperty IdentifyingNumber &#xA;cmd /c "msiexec /x $IdentifyingNumber /qn"</Uninstall>
-		<Path>C:\Program Files\Foxit Reader</Path>
-		<Logo>foxit_reader</Logo>
-		<Categories></Categories>
-		<InstallGroup></InstallGroup>
-		<UninstallGroup></UninstallGroup>
-	</FoxitReaderEnglish>
 	<Chrome>
 		<Vendor>Google</Vendor>
 		<Product>Chrome</Product>
